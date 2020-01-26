@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/TunRW-Angular",
+            "outputPath": "./backend/angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,12 +27,15 @@
                 "input": "src/my-theme.scss"
               },
               "src/styles.css",
-              "src/assets/css/spacing.min.css"
+              "src/assets/css/spacing.min.css",
+              "node_modules/slick-carousel/slick/slick.scss",
+              "node_modules/slick-carousel/slick/slick-theme.scss"
             
             ],
             "scripts": [
               "src/assets/js/theme-scripts.js",
-              "node_modules/jquery/dist/jquery.min.js"
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/slick-carousel/slick/slick.min.js"
             ]
           },
           "configurations": {

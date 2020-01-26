@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://tunrw-backend.herokuapp.com/api"
+  // apiUrl: "https://tunrw-backend.herokuapp.com/api"
+  apiUrl: "http://localhost:3000/api"
+
+  
 };
 
 /*
