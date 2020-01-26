@@ -38,9 +38,7 @@ import { AdminMemberListComponent } from './admin/admin-members/list-members/lis
 import { ErrorInterceptor } from './error-interceptor';
 import { ErrorComponent } from './error/error.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ClickOutsideModule } from 'ng-click-outside';
 
-import { ChartsModule } from 'ng2-charts';
 import { AngularMaterialModule } from './angular-material.module';
 import { GestureConfig, MatButtonModule, MatTooltipModule, MatBadgeModule, MatIconModule, MatDividerModule, MatListModule } from '@angular/material';
 import {MatSliderModule} from '@angular/material/slider';
@@ -117,9 +115,7 @@ import { AdminListAboutTextComponent } from './admin/admin-about/list-about-text
     MatBadgeModule,
     MatIconModule,
     MatDividerModule,
-    MatListModule,
-    ClickOutsideModule,
-    ChartsModule
+    MatListModule
   ],
   providers: [
     {provide : HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},  
