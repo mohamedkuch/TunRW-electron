@@ -1,0 +1,354 @@
+<div class="mainNavbarContainer" #navBar>
+  <a routerLink="/admin">
+    <div *ngIf="!homeFlag" class="logoContainer">
+      <i class="fas fa-dice-d20"></i>
+
+      <span class="navbarItemText ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">
+        DASHBOARD
+      </span>
+    </div>
+    <div *ngIf="homeFlag" class="logoContainer activeLogo ">
+      <i class="fas fa-dice-d20"></i>
+
+      <span class="navbarLogoTextActive ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">
+        DASHBOARD
+      </span>
+    </div>
+  </a>
+
+  <!--Services-->
+  <div *ngIf="!(servicesFlag || servicesCreateFlag || servicesEditFlag) ">
+    <a routerLink="/admin/Services">
+      <div class="navItemContainer  pb-3  pt-3">
+        <i class="fas fa-dice-d6 "></i>
+        <span class="navbarItemText ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">
+          Services
+        </span>
+      </div>
+
+    </a>
+  </div>
+  <div *ngIf="servicesFlag || servicesCreateFlag || servicesEditFlag">
+    <a routerLink="/admin/Services">
+      <div class="navItemContaineractive firstItem pb-3  pt-3">
+        <i class="fas fa-dice-d6 "></i>
+        <span class="navbarItemTextActive ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">
+          Services
+        </span>
+      </div>
+
+    </a>
+  </div>
+  <div class="navSeperator"> </div>
+
+  <!-- Events -->
+  <div *ngIf="!(eventFlag || eventCreateFlag || eventEditFlag) ">
+    <a routerLink="/admin/Events">
+      <div class="navItemContainer pb-3  pt-3">
+        <i class="fas fa-bullhorn "></i>
+        <span class="navbarItemText ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">
+          Events
+        </span>
+      </div>
+    </a>
+  </div>
+  <div *ngIf="eventFlag || eventCreateFlag || eventEditFlag">
+    <a routerLink="/admin/Events">
+      <div class="navItemContaineractive  pb-3  pt-3">
+        <i class="fas fa-bullhorn "></i>
+        <span class="navbarItemTextActive ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">
+          Events
+        </span>
+      </div>
+    </a>
+  </div>
+  <div class="navSeperator"> </div>
+
+  <!-- projects -->
+  <div *ngIf="!(projectFlag || projectCreateFlag || projectEditFlag) ">
+    <a routerLink="/admin/Projects">
+      <div class="navItemContainer pb-3  pt-3">
+        <i class="fas fa-gem "></i>
+        <span class="navbarItemText ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">
+          Projects
+        </span>
+      </div>
+    </a>
+  </div>
+  <div *ngIf="projectFlag || projectCreateFlag || projectEditFlag">
+    <a routerLink="/admin/Projects">
+      <div class="navItemContaineractive  pb-3  pt-3">
+        <i class="fas fa-gem "></i>
+        <span class="navbarItemTextActive ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">
+          Projects
+        </span>
+      </div>
+    </a>
+  </div>
+  <div class="navSeperator"> </div>
+
+  <!-- partners -->
+  <div *ngIf="!(partnersFlag || partnersCreateFlag || partnersEditFlag) ">
+    <a routerLink="/admin/Partners">
+      <div class="navItemContainer pb-3  pt-3">
+        <i class="fas fa-hands-helping "></i>
+        <span class="navbarItemText ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">
+          Partners
+        </span>
+      </div>
+    </a>
+  </div>
+  <div *ngIf="partnersFlag || partnersCreateFlag || partnersEditFlag">
+    <a routerLink="/admin/Partners">
+      <div class="navItemContaineractive  pb-3  pt-3">
+        <i class="fas fa-hands-helping "></i>
+        <span class="navbarItemTextActive ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">
+          Partners
+        </span>
+      </div>
+    </a>
+  </div>
+  <div class="navSeperator"> </div>
+
+  <!-- members -->
+  <div *ngIf="!(membersFlag || membersCreateFlag)">
+    <a routerLink="/admin/Members">
+      <div class="navItemContainer pb-3  pt-3">
+        <i class="fas fa-users "></i>
+        <span class="navbarItemText ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">Members</span>
+      </div>
+    </a>
+  </div>
+  <div *ngIf="membersFlag || membersCreateFlag" class="active">
+    <a routerLink="/admin/Members">
+      <div class="navItemContaineractive  pb-3  pt-3">
+        <i class="fas fa-users "></i>
+        <span class="navbarItemTextActive ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">Members</span>
+      </div>
+    </a>
+  </div>
+  <div class="navSeperator"> </div>
+  <!-- About -->
+  <div *ngIf="!(aboutFlag || aboutCreateFlag || aboutEditFlag) ">
+    <a routerLink="/admin/About">
+      <div class="navItemContainer pb-3  pt-3">
+        <i class="fas fa-info-circle"></i>
+        <span class="navbarItemText ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">
+          About
+        </span>
+      </div>
+    </a>
+  </div>
+  <div *ngIf="aboutFlag || aboutCreateFlag || aboutEditFlag">
+    <a routerLink="/admin/About">
+      <div class="navItemContaineractive  pb-3  pt-3">
+        <i class="fas fa-info-circle"></i>
+        <span class="navbarItemTextActive ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">
+          About
+        </span>
+      </div>
+    </a>
+  </div>
+
+
+
+
+  <div class="downNavbar  ">
+    <div class="navbarItemText ml-4 userNameNavbar mr-4" *ngIf="bigNavbarFlag && !smallNavbarFlag">
+      <p>
+        user : {{currentUser.username}} 
+      </p>
+     <p class="mt-1">
+      expires in : {{expiringTimer}} min
+     </p> 
+    </div>
+
+    <a class="logoutButton mt-3" (click)="onLogout()">
+      <div class="navSeperator"> </div>
+
+      <div class=" lougoutContainer downItem  text-center pb-4 pl-1 pr-1 pt-4">
+        <i class="fas fa-power-off "></i>
+        <span class="navbarItemText ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">
+          Logout
+        </span>
+      </div>
+
+    </a>
+  </div>
+
+
+</div>
+<!-- Sub Menu Section -->
+<div class="subHeaderWrapper mb-2">
+  <div class="container subHeaderContainer">
+    <div class="row justify-content-between">
+      <div class="col-xs-4">
+        <h4 *ngIf="homeFlag" class="subMenuTitle ml-2"><i class="fab fa-buffer mr-3"></i>Dashboard</h4>
+        <h4 *ngIf="membersFlag || membersCreateFlag" class="subMenuTitle ml-2"><i class="fas fa-users mr-3"></i>Members
+        </h4>
+        <h4 *ngIf="servicesFlag || servicesCreateFlag || servicesEditFlag" class="subMenuTitle ml-2"><i
+            class="fas fa-dice-d6 mr-3"></i>Services</h4>
+        <h4 *ngIf="eventFlag || eventCreateFlag || eventEditFlag" class="subMenuTitle ml-2"><i
+            class="fas fa-bullhorn mr-3"></i>Events</h4>
+        <h4 *ngIf="projectFlag || projectCreateFlag || projectEditFlag" class="subMenuTitle ml-2"><i
+            class="fas fa-gem mr-3"></i>Projects</h4>
+        <h4 *ngIf="partnersFlag || partnersCreateFlag || partnersEditFlag" class="subMenuTitle ml-2"><i
+            class="fas fa-hands-helping mr-3"></i>Partners</h4>
+        <h4 *ngIf="aboutFlag || aboutCreateFlag || aboutEditFlag" class="subMenuTitle ml-2"> <i
+            class="fas fa-info-circle mr-3"></i>About</h4>
+      </div>
+      <div class="col-xs-4 text-center">
+        <!--
+     <h5 class="userAlias">
+            <span class="roleUser">
+              <strong style="text-transform: uppercase"><i class="fas fa-user mr-1"></i>
+                {{currentUser.name}}
+              </strong>
+            </span>
+            <span class="userRole">
+               Admin
+            </span>
+          </h5>
+       -->
+
+      </div>
+      <div class="col-xs-4 subHeaderMenu ">
+        <h4>
+          <a *ngIf="homeFlag" routerLink="/admin" class="subHeaderMenuElement" style="color: #e71425;">Home </a>
+          <i *ngIf="homeFlag" class="fas fa-caret-right ml-2 "></i>
+          <!-- Service SubMenu-->
+          <a *ngIf="servicesFlag || servicesCreateFlag || servicesEditFlag" routerLink="/admin"
+            class="subHeaderMenuElement">Home </a>
+          <i *ngIf="servicesFlag || servicesCreateFlag || servicesEditFlag" class="fas fa-caret-right ml-2 mr-3"></i>
+          <a *ngIf="servicesFlag" routerLink="/admin/Services" class="subHeaderMenuElement"
+            style="color: #e71425;">Services </a>
+          <i *ngIf="servicesFlag" class="fas fa-caret-right ml-2 "></i>
+          <!-- Event create/add SubMenu-->
+          <a *ngIf="servicesCreateFlag || servicesEditFlag" routerLink="/admin/Services"
+            class="subHeaderMenuElement">Services </a>
+          <i *ngIf="servicesCreateFlag || servicesEditFlag" class="fas fa-caret-right ml-2 mr-2"></i>
+          <a *ngIf="servicesCreateFlag" class="subHeaderMenuElement" style="color: #e71425;">
+            Create Service
+          </a>
+          <a *ngIf="servicesEditFlag" class="subHeaderMenuElement" style="color: #e71425;">
+            Edit Service
+          </a>
+
+
+
+          <!-- Event SubMenu-->
+          <a *ngIf="eventFlag || eventCreateFlag || eventEditFlag" routerLink="/admin" class="subHeaderMenuElement">Home
+          </a>
+          <i *ngIf="eventFlag || eventCreateFlag || eventEditFlag" class="fas fa-caret-right ml-2 mr-3"></i>
+          <a *ngIf="eventFlag" routerLink="/admin/Events" class="subHeaderMenuElement" style="color: #e71425;">Events
+          </a>
+          <i *ngIf="eventFlag" class="fas fa-caret-right ml-2 "></i>
+          <!-- Event create/add SubMenu-->
+          <a *ngIf="eventCreateFlag || eventEditFlag" routerLink="/admin/Events" class="subHeaderMenuElement">Events
+          </a>
+          <i *ngIf="eventCreateFlag || eventEditFlag" class="fas fa-caret-right ml-2 mr-2"></i>
+          <a *ngIf="eventCreateFlag" class="subHeaderMenuElement" style="color: #e71425;">
+            Create Event
+          </a>
+          <a *ngIf="eventEditFlag" class="subHeaderMenuElement" style="color: #e71425;">
+            Edit Event
+          </a>
+
+          <!-- Project SubMenu-->
+          <a *ngIf="projectFlag || projectCreateFlag || projectEditFlag" routerLink="/admin"
+            class="subHeaderMenuElement">Home </a>
+          <i *ngIf="projectFlag || projectCreateFlag || projectEditFlag" class="fas fa-caret-right ml-2 mr-3"></i>
+          <a *ngIf="projectFlag" routerLink="/admin/Projects" class="subHeaderMenuElement"
+            style="color: #e71425;">Projects </a>
+          <i *ngIf="projectFlag" class="fas fa-caret-right ml-2  "></i>
+
+          <!-- Project create/add SubMenu-->
+          <a *ngIf="projectCreateFlag || projectEditFlag" routerLink="/admin/Projects"
+            class="subHeaderMenuElement">Projects </a>
+          <i *ngIf="projectCreateFlag || projectEditFlag" class="fas fa-caret-right ml-2 mr-2"></i>
+          <a *ngIf="projectCreateFlag" class="subHeaderMenuElement" style="color: #e71425;">Create Project</a>
+          <a *ngIf="projectEditFlag" class="subHeaderMenuElement" style="color: #e71425;"> Edit Project</a>
+
+          <!-- Partner SubMenu-->
+          <a *ngIf="partnersFlag || partnersCreateFlag || partnersEditFlag" routerLink="/admin"
+            class="subHeaderMenuElement">Home </a>
+          <i *ngIf="partnersFlag || partnersCreateFlag || partnersEditFlag" class="fas fa-caret-right ml-2 mr-3"></i>
+          <a *ngIf="partnersFlag" routerLink="/admin/Partners" class="subHeaderMenuElement"
+            style="color: #e71425;">Partners </a>
+          <i *ngIf="partnersFlag" class="fas fa-caret-right ml-2 "></i>
+
+          <!-- Partner create/add SubMenu-->
+          <a *ngIf="partnersCreateFlag || partnersEditFlag" routerLink="/admin/Partners"
+            class="subHeaderMenuElement">Events </a>
+          <i *ngIf="partnersCreateFlag || partnersEditFlag" class="fas fa-caret-right ml-2 mr-2"></i>
+          <a *ngIf="partnersCreateFlag" class="subHeaderMenuElement" style="color: #e71425;">
+            Create Partner
+          </a>
+          <a *ngIf="partnersEditFlag" class="subHeaderMenuElement" style="color: #e71425;">
+            Edit Partner
+          </a>
+
+          <!-- Members Submenu-->
+          <a *ngIf="membersFlag || membersCreateFlag" routerLink="/admin" class="subHeaderMenuElement">Home </a>
+          <i *ngIf="membersFlag || membersCreateFlag" class="fas fa-caret-right ml-2 mr-3"></i>
+          <a *ngIf="membersFlag " routerLink="/admin/Members" class="subHeaderMenuElement"
+            style="color: #e71425;">Members </a>
+          <i *ngIf="membersFlag" class="fas fa-caret-right ml-2 "></i>
+          <!-- Members create SubMenu-->
+          <a *ngIf="membersCreateFlag " routerLink="/admin/Members" class="subHeaderMenuElement">Members </a>
+          <i *ngIf="membersCreateFlag" class="fas fa-caret-right ml-2 mr-3 "></i>
+          <a *ngIf="membersCreateFlag " routerLink="/admin/Members/create" class="subHeaderMenuElement"
+            style="color: #e71425;">create </a>
+          <i *ngIf="membersCreateFlag" class="fas fa-caret-right ml-2  "></i>
+
+
+          <!-- About SubMenu-->
+          <a *ngIf="aboutFlag || aboutCreateFlag || aboutEditFlag" routerLink="/admin" class="subHeaderMenuElement">Home
+          </a>
+          <i *ngIf="aboutFlag || aboutCreateFlag || aboutEditFlag" class="fas fa-caret-right ml-2 mr-3"></i>
+          <a *ngIf="aboutFlag" routerLink="/admin/About" class="subHeaderMenuElement" style="color: #e71425;">About </a>
+          <i *ngIf="aboutFlag" class="fas fa-caret-right ml-2 "></i>
+
+          <!-- About Team Member create/add SubMenu-->
+          <a *ngIf="aboutCreateFlag || aboutEditFlag" routerLink="/admin/About" class="subHeaderMenuElement">About </a>
+          <i *ngIf="aboutCreateFlag || aboutEditFlag" class="fas fa-caret-right ml-2 mr-2"></i>
+          <a *ngIf="aboutCreateFlag" class="subHeaderMenuElement" style="color: #e71425;">
+            Create Team Member
+          </a>
+          <a *ngIf="aboutEditFlag" class="subHeaderMenuElement" style="color: #e71425;">
+            Edit Team Member
+          </a>
+
+
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div (click)="triggerNotification()" (clickOutside)="showNotification = false" class="notificationWrapper">
+
+  <mat-icon *ngIf="notWatchedNotification > 0" matBadge="{{notWatchedNotification}}" matBadgeColor="warn">notifications
+  </mat-icon>
+  <mat-icon *ngIf="notWatchedNotification == 0">notifications</mat-icon>
+
+</div>
+
+<div @fadeIn *ngIf="showNotification" class="notificationContainer">
+
+  <mat-list>
+    <div *ngFor="let notification of notificationArray; let j = index">
+      <mat-list-item style="color: white; font-size: 12px; font-style: italic">
+        <div class="textNotification"><strong style="text-transform: uppercase">{{notification.creator}}</strong>
+          {{notification.text}}</div>
+        <div *ngIf="watchVerification(notification)" class="newTag text-center">new</div>
+      </mat-list-item>
+      <mat-divider class="mb-1 mt-1" *ngIf="notificationArray.length > 1 "></mat-divider>
+    </div>
+    <div class="viewMoreButton" (click)="onViewAllNotClick()">
+      View all
+    </div>
+
+
+  </mat-list>
+</div>

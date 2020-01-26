@@ -1,0 +1,33 @@
+<section class="statsSection" id="PartenersSection">
+    <div class="curve curve-top"></div>
+  <div class="container partnersContainer mb-4">
+        <div class="row text-white">
+            <div class="col-lg-12  mb-5">
+                <div class="col-lg-12 text-center section-head ">
+                    <h2 class="mt-5 mb-5">
+                        Our Sponsors 
+                    </h2>
+                    <h3 class="deviderSpan deviderSpanLeft">..</h3> 
+                    <h3 class="deviderSpan deviderSpanRight">..</h3> 
+    
+                    <h5> The Talented Crew </h5>
+    
+                </div>
+
+            </div>
+            <br/>
+
+            <div *ngFor="let partner of partners" class="col-md-3 imageContainer mt-4">
+              <img class="img-fluid partnersImg text-center" [src]="partner.imagePath" [alt]="partner.title" />
+            </div>
+        
+
+        </div>
+
+
+
+
+  </div>
+  <div class="curve curve-bottom"></div>
+
+</section>

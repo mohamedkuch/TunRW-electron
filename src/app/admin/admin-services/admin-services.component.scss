@@ -1,0 +1,98 @@
+
+.navbar-header {
+  margin-top: 8px;
+}
+.saveButton {
+  background: #e71425;
+  color: white;
+  float: right;
+}
+.activePills, .activePills:hover, .activePills:active, .addNewEventBadge:active{
+  background: #e71425;
+  color: white;
+}
+.inactivePills{
+  background: #e7e7e7;
+  color: #232323;
+}
+.addNewEventBadge{
+  float: right;
+  background: #e71425;
+  position: relative;
+  bottom: 8px;
+  right: 8px;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.5s all;
+  font-weight: 400;
+  font-size: 17px;
+  padding: 10px;
+}
+.addNewEventBadge:hover {
+  background: #96030f;
+  color: white;
+  text-decoration: none;
+  transition: 0.5s all;
+}
+
+.text-primary {
+  color: #e71425;
+}
+.service-box{
+  padding-top: 4.8rem;
+  padding-bottom: 4.8rem;
+  padding-right: 1.8rem;
+  padding-left: 1.8rem;
+  position: relative;
+  transition: all 0.5s;
+  -moz-transition: all  0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  bottom: 0px;
+  border: 1px solid #d5d5d5;
+  border-radius: 5px;
+  cursor: default;
+  background-color: white;
+}
+.serviceSeperator{
+  max-width: 60% !important; 
+  border-width: 1px !important;
+  border-color: #e5e5e5e5 !important;
+
+  transition: all 0.5s;
+  -moz-transition: all  0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+.service-box:hover {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.51);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.51);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.51);
+  bottom: 10px;
+  border: 1px solid #e71425;
+
+  .serviceSeperator{
+    border-color: #e71425 !important;
+  }
+
+}
+
+.previewIcon {
+  color: #e71425;
+}
+.previewContainer {
+  border:1px solid #e71425;
+  border-radius: 20px;
+  color: #e71425;
+  padding: 2rem;
+  background: white;
+}
+.adminSeperator{
+  max-width: 80%;
+  border-width: 1px;
+  border-color: #c7c7c7;
+  position: relative;
+  top: 60px;
+}

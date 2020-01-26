@@ -1,0 +1,114 @@
+
+   <!-- Fixed navbar -->
+   <app-header-admin></app-header-admin>
+
+   <div class="container mainContainerEvent ">
+     <div class="row">
+       <mat-spinner *ngIf="isLoading"></mat-spinner>
+      <div *ngIf="!isLoading" class="col-xs-8 adminShell">
+   
+           <div class="adminTitleWrapper">
+             <h3 class="widgetTitle pl-3">
+               <strong *ngIf="mode == 'create'">New Service</strong>
+               <strong *ngIf="mode == 'edit'">Edit Service</strong>
+             </h3>
+           </div>
+   
+           <div class="row">
+   
+             <div class="col-lg-12 mt-5">
+            
+                 <form [formGroup]="form " class="form-horizontal" (submit)="onSaveService()">
+                      <div class="form-group" >
+                        <div class="col-sm-10 col-sm-offset-1">
+                            <ul class="list-group list-group-horizontal iconServiceList">
+                                <li (click)="onPrevClick()" class="list-group-item arrowContainer">
+                                  <i class="fas fa-2x fa-angle-left serviceIcon"></i>
+                                </li>
+                                <li class="list-group-item noBorderItem">
+                                   <i  class="{{firstIcon}}  serviceIcon "(click)="onClickFirst()"  style="color: #d5d5d5" ></i>
+                                </li>
+                                <li class="list-group-item scdItem" >
+                                    <i class="{{scdIcon}} fa-2x serviceIcon "  (click)="onClickSecond()" style="color: #474747"></i>
+                                </li>
+                                <li class="list-group-item activeItem" >
+                                    <i class="{{thirdIcon}} fa-3x serviceIcon" ></i>
+                                </li>
+                                <li class="list-group-item noBorderItem"  >
+                                    <i class="{{fourthIcon}} fa-2x  serviceIcon" (click)="onClickFourth()" style="color: #474747"></i>
+                                </li>
+                                <li class="list-group-item scdItem"  >
+                                    <i class="{{fifthIcon}} serviceIcon"  (click)="onClickFifth()" style="color: #d5d5d5"></i>
+                                </li>
+                                <li (click)="onNextClick()" class="list-group-item arrowContainer">
+                                    <i class="fas fa-2x fa-angle-right serviceIcon"></i>
+                                </li>
+                            </ul>
+                            <mat-slider
+                            thumbLabel
+                            [displayWith]="formatLabel"
+                            tickInterval="1000"
+                            value="{{activeSliderCounter}}"
+                            step="1"
+                            min="0"
+                            (input)="onChangeSlider($event.value)"
+                            max="{{fontAwesomeList.length -1}}"></mat-slider>
+                        </div>
+                      </div>
+                      <input name="icon" type="hidden" formControlName="icon" value="test" >
+                    <hr class="serviceSeperator"/>
+                     <div class="form-group">
+                       <label class="col-sm-3 control-label">Service Title</label>
+                       <div class="col-sm-8">
+                         <input type="text" class="form-control" formControlName="title" placeholder="Name" >
+                         <mat-error *ngIf="form.get('title').invalid && errorFlag">Please enter a Title</mat-error>
+                       </div>
+                     </div>
+                     <div class="form-group">
+                         <label class="col-sm-3 control-label">Description</label>
+                         <div class="col-sm-8">
+                             <textarea class="form-control" formControlName="description" rows="3" >
+   
+                             </textarea>
+                           <mat-error *ngIf="form.get('description').invalid && errorFlag">Please enter a valid description</mat-error>
+                         </div>
+                     </div>
+                     <div class="form-group">
+                      <div class="col-sm-11">
+                        <button type="submit" class="btn btn-default saveButton mb-5 text-center">Save Service</button>
+
+                      </div>
+                    </div>
+   
+                 </form>
+   
+           </div>
+         </div>
+       </div>
+       <div *ngIf="!isLoading" class="col-xs-3 col-xs-offset-1 adminShell">
+   
+         <div class="adminTitleWrapper">
+           <h3 class="widgetTitle pl-3">
+             <strong >Preview Service</strong>
+           </h3>
+         </div>
+   
+             <div class="servicePreview">
+                    <span >
+
+                        <i  style="color: #e71425" class="{{defaultIconClass}} fa-4x mb-4"></i>
+
+                    </span>
+                  <h3 class="mb-3">{{form.value.title}}</h3>
+                  <hr class="serviceSeperator"/>
+                  <p  class="text-muted mb-0">
+                      {{form.value.description}}
+                  </p>
+            </div>
+       </div>
+     </div>
+   
+   
+   </div>
+   
+   

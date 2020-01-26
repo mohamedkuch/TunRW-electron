@@ -1,0 +1,48 @@
+
+   <!-- Header -->
+   <app-header-admin></app-header-admin>
+
+   <div class="mainContainerEvent">
+      <!-- Card Section -->
+      <div class="container mt-5">
+        <div class="row">
+       <div class="col-xs-12">
+       <!-- Event Tab -->
+       <div class="AlleventTab">
+         <div class="widgetTitleWrapper pb-2">
+           <h3 class="widgetTitle pl-3">All Services
+   
+             <a *ngIf="services.length < 4" routerLink="/admin/Services/create" class="addNewEventBadge"><i class="fas fa-plus"></i> | Add New Service</a>
+   
+           </h3>
+   
+         </div> 
+         <app-admin-list-service></app-admin-list-service> 
+   
+   
+       </div>
+       </div>
+   
+   
+   
+     </div>
+   
+   
+   
+   
+   
+   </div>
+
+   
+
+
+  <div class="container ">
+      <div class="row ">
+          <hr class="adminSeperator"/>
+  
+          <div class="col-lg-12 mt-5 text-center">
+              <span class="previewContainer mt-5"><i class="fas fa-eye previewIcon mr-2"></i> Preview</span>
+          </div>
+      </div>
+    </div>  
+    <app-services></app-services>   

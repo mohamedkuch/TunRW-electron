@@ -1,0 +1,26 @@
+
+.adminTitle{
+    border-left: 3px solid #e71425;
+    color: #e71425;
+  }
+  .deleteButton {
+    cursor: pointer;
+    color: #323232;
+  }
+  .deleteButton:hover {
+    color: #e71425;
+  }
+  mat-spinner {
+    margin: auto;
+  }
+  .mat-paginator {
+    border-top: 1px solid #d8d8d8;
+  }
+  .table ,.table-hover {
+    margin-bottom: 0px !important;
+  }
+  .cancelButton{
+    color: #d5d5d5d5;
+    cursor: default;
+  }
+  

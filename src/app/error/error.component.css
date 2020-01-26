@@ -1,0 +1,11 @@
+.okButton{
+    background: #e71425;
+    color: white;
+    transition: 1.3s;
+}
+.okButton:hover{
+    background: #96030f;
+  }
+.errorContainer {
+ min-width: 300px;
+}

@@ -1,0 +1,147 @@
+#QuoteSection {
+  background-image: url("../../../assets/images/bgAbout.png");
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-position-x: 5%;
+
+}
+
+.quoteContainer {
+  padding-bottom: 50px;
+  padding-top: 50px;
+
+}
+
+.slick-slider {
+  width: 100%;
+  margin: auto;
+}
+
+
+.nav-btn {
+  height: 47px;
+  position: absolute;
+  width: 26px;
+  cursor: pointer;
+  top: 100px !important;
+}
+
+.prev-slide.slick-disabled,
+.next-slide.slick-disabled {
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+
+.prev-slide:hover {
+  background-position: 0px -53px;
+}
+
+.next-slide:hover {
+  background-position: -24px -53px;
+}
+
+.slide:focus {
+  outline: none;
+}
+
+.teamName {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.teamPosition {
+  color: #808080;
+}
+
+.slideContainer {
+  border-radius: 15px;
+  transition: 1s all;
+  cursor: pointer;
+  border: 2px solid transparent;
+
+}
+
+.slideContainer:hover {
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.13);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.13);
+  border: 2px solid #e71425;
+
+}
+
+.arrowNav {
+  width: 100%;
+}
+
+.prevIcon {
+  left: 0;
+  position: absolute;
+  background: #232323;
+}
+
+.navArrows {
+  width: 100%;
+}
+
+.nextIcon {
+  right: 0;
+  position: absolute;
+  background: #232323;
+}
+
+.iconArrow {
+  color: white;
+}
+
+.navArrows {
+  position: absolute;
+  top: 10%;
+}
+
+
+.deviderSpan {
+  width: 50px;
+  margin: 0 auto;
+  text-align: center;
+  top: 20px;
+  position: relative;
+  height: 1px;
+  background-color: #e71425;
+  text-indent: -9999px;
+}
+
+.section-head h2 {
+  letter-spacing: 2px;
+  position: relative;
+  right: 4px;
+  font-weight: 600;
+  font-size: 32px;
+  font-family: 'Rubik', sans-serif;
+}
+
+.section-head h5 {
+  font-size: 14px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #3b3b3b;
+
+}
+
+.deviderSpanLeft {
+  right: 138px;
+
+}
+
+.deviderSpanRight {
+  left: 130px;
+  top: 19px;
+
+}
+
+.aboutUsTitle h2 {
+  color: white;
+  font-weight: bold;
+  font-family: "Rubik", sans-serif;
+}

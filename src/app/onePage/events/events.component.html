@@ -1,0 +1,79 @@
+<section class="eventsSection "  id="events">
+    <div class="curve curve-top"></div>
+    <div class="container eventsContainer">
+      <div class="row ">
+
+        <div class="col-lg-12 mx-auto text-center mt-4">
+            <div class="col-lg-12 text-center section-head ">
+                <h2 class="mt-5 mb-5">
+                    Our Events 
+                </h2>
+                <h3 class="deviderSpan deviderSpanLeft">..</h3> 
+                <h3 class="deviderSpan deviderSpanRight">..</h3> 
+
+                <h5> New adventures </h5>
+
+            </div>
+          <div class="row eventsSpacer"  *ngIf="events.length > 0">
+
+            <div *ngFor="let event of events; let j = index " class="col-lg-6 mt-5">
+                <div class="eventShell">
+                    <div class="upcomingIcon" *ngIf="j == 0">.
+
+                      </div>
+                    <ngx-slick-carousel class="slideContainer" 
+                    #slickModal="slick-carousel" 
+                    [config]="slideConfig" 
+                    >
+                  <div ngxSlickItem *ngFor="let singlePath of event.imagePath" class="slideContainer">
+                   
+                        <img class="slideContainer img-fluid" src="{{singlePath}}" alt="" width="100%">
+                  </div>
+                 
+                  </ngx-slick-carousel>
+                    <div class="eventDescBG ">
+                      <p class="titleEvent">
+                          {{event.title}}
+                      </p>
+                      <p class="text-left m-3 eventDesc ">
+                          <span class="dateEvent pl-0">
+                            <i class="fas fa-calendar-alt pr-1"></i> {{event.date}}
+                          </span>
+                          <span class="dateEvent">
+                            <i class="fas fa-map-marker-alt pl-2 pr-1"></i>
+                            {{event.adress}}
+                          </span>
+                          <br/>
+                      </p>
+                          <div class="spacingEvent ml-3" ></div>
+                          <div class="spacingEvent2 ml-3"></div>
+                      <p class="mb-4 text-left m-3 eventDesc ">
+                          {{event.description}}
+                      </p>
+
+
+                    </div>
+                </div>
+            </div>
+
+          </div>
+          <!-- <div  *ngIf="events.length > 0" class="mt-5 pt-5 text-center">
+            <span (click)="onLoadMoreEvent()" class="viewMoreButton">
+               Load More
+            </span>
+          </div> -->
+
+          <div class="row mt-5" *ngIf="events.length == 0">
+            <h3 class="text-center"> No events added yet !</h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="curve curve-bottom"></div>
+
+  </section>
+

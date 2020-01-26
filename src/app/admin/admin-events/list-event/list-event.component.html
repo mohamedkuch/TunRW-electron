@@ -1,0 +1,27 @@
+<mat-spinner class="mt-5 mb-5" *ngIf="isLoading"></mat-spinner>
+<table class="table table-hover"  *ngIf="events.length > 0 && !isLoading">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Event Name</th>
+          <th>Created By</th>
+          <th class="text-center" style="width: 5%">Edit</th>
+          <th class="text-center" style="width: 5%">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let event of events; let j = index">
+          <th scope=row>{{j+1}}</th>
+          <td> {{event.title}}</td>
+          <td> {{event.creator}}</td>
+
+          <td class="text-center"><a [routerLink]="['/admin/Events/edit', event.id]" class="deleteButton"><i class="fas fa-edit"></i></a></td>
+          <td class="text-center"><span (click)="onDelete(event.id)" class="deleteButton"><i class="fas fa-trash deleteButton"></i></span></td>
+        </tr>
+
+      </tbody>
+</table>
+<div class="row mt-5 mb-5" *ngIf="events.length == 0 && !isLoading">
+    <h3 class="text-center"> No events added yet !</h3>
+</div>
+<mat-paginator  *ngIf="events.length > 0 " [length]="totalEvents" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangePage($event)"></mat-paginator>

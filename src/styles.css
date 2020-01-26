@@ -1,0 +1,266 @@
+/* You can add global styles to this file, and also import other style files */
+.logoAdmin {
+  height: 35px;
+  width : 150px;
+  background: url(assets/images/logo.png) no-repeat;
+  background-size: 150px 35px ;
+  background-position-x: 12px;
+}
+.navbar-header {
+  margin-top: 8px;
+}
+.subHeaderMenu{
+  text-align: right;
+}
+.subHeaderMenuElement{
+  color: #232323;
+}
+.subHeaderMenuElement:hover{
+  color: #e71425;
+  text-decoration: none;
+}
+.subHeaderMenuElement:active{
+  color: #e71425;
+  text-decoration: none;
+}
+.subHeaderMenu h4 {
+  font-size: 14px;
+  margin-top: 12px;
+}
+.cardContainer{
+  border: 1px solid #d8d8d8;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.12);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.12);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.12);
+  transition: 0.5s all;
+  cursor: default;
+}
+.historyTab, .eventTab, .membersTab{
+  border: 1px solid #d8d8d8;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.12);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.12);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.12);
+  transition: 0.5s all;
+  cursor: default;
+}
+.AlleventTab {
+  border: 1px solid #d8d8d8;
+  border-radius: 5px;
+  cursor: default;
+}
+
+.cardValue{
+  position: absolute;
+  right: 40px;
+  top: -5px;
+  font-size: 50px;
+}
+.cardValueDate{
+  position: absolute;
+  right: 40px;
+  font-size: 50px;
+}
+.cardContainer:hover {
+
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(34, 3, 6, 0.32);
+  -moz-box-shadow: 0px 0px 30px 0px rgba(34, 3, 6, 0.32);
+  box-shadow: 0px 0px 30px 0px rgba(34, 3, 6, 0.32);
+  transition: 0.5s all;
+}
+.widgetTitle{
+  font-weight: bold;
+  border-left: 3px solid #e71425;
+}
+.widgetTitleWrapper{
+  border-bottom: 1px solid #d8d8d8;
+}
+.eventDate{
+  position: absolute;
+  right: 30px;
+}
+.viewAllBadge{
+  position: absolute;
+  top: 18px;
+  right: 30px;
+  background: #e71425;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+.viewAllBadge:hover{
+  background: #96030f;
+  color: white;
+  text-decoration: none;
+  transition: 0.5s all;
+}
+.mainContainerEvent{
+  margin-top: 30px !important;
+}
+.userAlias{
+  position: relative;
+  top: 5px;
+}
+.roleUser{
+  background:#e71425 ;
+  color: white;
+  border-radius: 4px;
+  font-size: 13px;
+  position: relative;
+  bottom: 3px;
+  padding: 10px;
+  left: 8px;
+}
+.userRole{
+  background:#232323 ;
+  color: white;
+  border-radius: 4px;
+  font-size: 10px;
+  padding: 5px;
+  position: absolute;
+  bottom: 15px;
+}
+.navSeperator{
+  border-left: 1px solid #9d9d9d;
+  text-indent: -9999px;
+  white-space: nowrap;
+}
+
+.eventDescBG {
+  background-color: #fff;
+}
+.projectSection {
+  padding-bottom: 8rem;
+  background-color: #f8f8f8f8 !important;
+}
+.eventShell{
+  border-radius: 8px;
+  border: 2px solid #232323;
+
+  position: relative;
+  top:0px;
+  left:0px;
+
+transition: top 0.5s;
+-moz-transition: top  0.5s;
+-webkit-transition:top 0.5s;
+-o-transition: top 0.5s;
+}
+.eventShell:hover{
+  top:-10px;
+  cursor: pointer;
+}
+.eventImage{
+  border-radius: 5px 5px 0 0;
+  -webkit-box-shadow: inset -6px 8px 42px 0px rgba(0,0,0,0.26);
+-moz-box-shadow: inset -6px 8px 42px 0px rgba(0,0,0,0.26);
+box-shadow: inset -6px 8px 42px 0px rgba(0,0,0,0.26);
+}
+.titleEvent {
+
+  padding: 0rem 1rem 0rem 1rem;
+  color: #232323;
+  background: #e9e9e9;
+  padding: 1em;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.statsSection{
+  background: #7c0505;
+
+  
+}
+.eventDesc{
+  font-size: 14px;
+}
+/* Angular material Style */
+
+.mat-progress-spinner circle, .mat-spinner circle  {
+  stroke: #e71425;
+}
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #e71425;
+}
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow{
+  color: #e71425 !important;
+}
+.mat-form-field.mat-focused .mat-form-field-ripple{
+  background-color: #e71425 !important;
+}
+.eventsSection{
+  background: #232323;
+}
+.viewMoreButton{
+  background: #e5e5e5;
+  color: #232323;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+  top: -12px;
+  padding: 12px;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px 5px 0 0 ;
+transition: all 0.5s;
+-moz-transition: all  0.5s;
+-webkit-transition:all 0.5s;
+-o-transition: all 0.5s;
+opacity: 0.5;
+}
+.viewMoreButton:hover{
+  background: white;
+  border: 1px solid white;
+  opacity: 1;
+}
+.section-heading{
+  width: fit-content;
+  left: -28px;
+  font-size: 40px;
+  position: relative;
+  bottom: 20px;
+  color: #232323;
+  border-radius: 1px;
+}
+.cdk-overlay-dark-backdrop {
+  background: rgba(0,0,0,.72) !important;
+}
+.title-span{
+  -ms-transform: rotate(-90deg); /* IE 9 */
+  -webkit-transform: rotate(-90deg); /* Safari prior 9.0 */
+  transform: rotate(-90deg); 
+  color: #141414;
+  font-size: 20px;
+  margin-right: 5px;
+  position: relative;
+  bottom: 8px;
+}
+
+
+
+@media (max-width: 768px) {
+
+  .navbar-brand {
+    padding-top: 0px;
+  }
+}
+header {
+  height: 100vh;
+}
+
+.seperator{
+  background: url(assets/images/seperator.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 150%;
+  height: 150px;
+  position: absolute;
+  bottom: -40px ;
+  left: -180px;
+
+
+-webkit-transform: rotate(-4deg);
+transform: rotate(-4deg);
+}

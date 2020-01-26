@@ -1,0 +1,8 @@
+
+<span (click)="onNoClick()" class="closeButton">X</span>
+<h1 class="mb-3 projectTitle" mat-dialog-title>{{data.project.title}}</h1>
+<img [src]="data.project.imagePath" [alt]="data.project.title" class="img-responsive" />
+<hr/>
+<div mat-dialog-content>
+  <p>{{data.project.description}}</p>
+</div>

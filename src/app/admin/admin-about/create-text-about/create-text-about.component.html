@@ -1,0 +1,48 @@
+
+   <!-- Fixed navbar -->
+   <app-header-admin></app-header-admin>
+
+
+   <div class="mainContainerEvent">
+       <!-- Card Section -->
+       <div class="container mt-5">
+         <div class="row">
+             <mat-spinner *ngIf="isLoading"></mat-spinner>
+            <div *ngIf="!isLoading" class="col-xs-12 adminShell">
+         
+                 <div class="adminTitleWrapper">
+                   <h3 class="widgetTitle pl-3">
+                     <strong *ngIf="mode == 'create'">New About Text</strong>
+                     <strong *ngIf="mode == 'edit'">Edit About Text</strong>
+                   </h3>
+                 </div>
+         
+                 <div class="row">
+         
+                   <div class="col-lg-11 mt-5">
+                       <form [formGroup]="form " class="form-horizontal" (submit)="onSaveAboutText()">
+                           <div class="form-group">
+                             <label class="col-sm-3 control-label">About Text</label>
+                             <div class="col-sm-9">
+                               <textarea class="form-control" formControlName="text" rows="3" >
+      
+                                </textarea>
+                               <mat-error *ngIf="form.get('text').invalid && errorFlag">Please enter a Text</mat-error>
+                             </div>
+                           </div>
+                      
+         
+                           <button type="submit" class="btn btn-default saveButton mb-5">Save About Text</button>
+         
+                       </form>
+         
+                 </div>
+               </div>
+             </div>
+           
+           </div>
+         
+     </div>
+   </div>
+     
+   

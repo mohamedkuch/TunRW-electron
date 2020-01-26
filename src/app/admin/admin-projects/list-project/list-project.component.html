@@ -1,0 +1,27 @@
+<mat-spinner class="mt-5 mb-5" *ngIf="isLoading"></mat-spinner>
+<table class="table table-hover"  *ngIf="projects.length > 0 && !isLoading">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Project Name</th>
+          <th>Created By</th>
+          <th class="text-center" style="width: 5%">Edit</th>
+          <th class="text-center" style="width: 5%">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of projects; let j = index">
+          <th scope=row>{{j+1}}</th>
+          <td> {{project.title}}</td>
+          <td> {{project.creator}}</td>
+
+          <td class="text-center"><a [routerLink]="['/admin/Projects/edit', project.id]" class="deleteButton"><i class="fas fa-edit"></i></a></td>
+          <td  class="text-center"><span (click)="onDelete(project.id)" class="deleteButton"><i class="fas fa-trash deleteButton"></i></span></td>
+        </tr>
+
+      </tbody>
+</table>
+<div class="row mt-5 mb-5" *ngIf="projects.length == 0 && !isLoading">
+    <h3 class="text-center"> No projects added yet !</h3>
+</div>
+<mat-paginator  *ngIf="projects.length > 0 " [length]="totalProjects" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangePage($event)"></mat-paginator>

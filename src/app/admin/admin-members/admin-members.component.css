@@ -1,0 +1,22 @@
+
+.addNewMemberBadge{
+  float: right;
+  background: #e71425;
+  position: relative;
+  bottom: 8px;
+  right: 8px;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.5s all;
+  font-weight: 400;
+  font-size: 17px;
+  padding: 10px;
+}
+.addNewMemberBadge:hover {
+  background: #96030f;
+  color: white;
+  text-decoration: none;
+  transition: 0.5s all;
+}

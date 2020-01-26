@@ -1,0 +1,137 @@
+
+/*--------------------
+3. Header
+--------------------*/
+
+header {
+  background-image: 
+  linear-gradient(to bottom, rgba(245, 246, 252, 0.0), rgba(231, 20, 37, 0.23)),
+  url(../../../assets/images/bg-main.jpg);
+  background-repeat: none;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  
+  color: #fff;
+}
+
+header .intro-text {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+header .intro-text {
+    padding-top: 300px;
+    padding-bottom: 200px;
+}
+}
+
+header .intro-text .intro-lead-in {
+  font-family: 'Teko', sans-serif;
+  font-size: 22px;
+  line-height: 22px;
+  margin-bottom: 25px;
+}
+
+@media (min-width: 768px) {
+header .intro-text .intro-lead-in {
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 40px;
+    margin-bottom: 25px;
+}
+}
+
+header .intro-text .intro-heading {
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 50px;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+
+@media (min-width: 768px) {
+header .intro-text .intro-heading {
+    text-transform: uppercase;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 700;
+    font-size: 75px;
+    line-height: 75px;
+    margin-bottom: 50px;
+}
+}
+.buttonFindOut {
+  border-radius: 3px;
+}
+.registerNowContainer{
+  padding-top: 200px;
+
+}
+.registerNowIn{
+  padding: 20px;
+  background: white;
+  width: 90%;
+  height: 100%;
+  border-radius: 3px;
+  text-align: center;
+
+}
+.topButton{
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 3px;
+
+}
+.normalHr {
+  text-align: center;
+  max-width: 94%;
+  border-width: 1px;
+  border-color: #d8d8d8;
+}
+.memberButton{
+  background: #e71425 ;
+  transition: 0.8s all;
+}
+.memberButton:hover{
+  background:#ad0f1c;
+}
+.subButton{
+  background:#5a5a5a;
+  transition: 0.8s all;
+}
+.subButton:hover{
+background:#131313;
+}
+.mid{
+  margin-bottom: 10px !important;
+  margin-top: 10px !important;
+}
+.findOutButton{
+  background:transparent;
+  border: 3px solid white;
+  border-radius: 5px;
+  width: 20%;
+  color: white;
+  text-align: center;
+
+  transition: 0.8s all;
+  margin-left: 30%;
+  margin-top: 5%;
+
+}
+.findOutButton:hover {
+  background: white ;
+  color: #131313;
+
+}

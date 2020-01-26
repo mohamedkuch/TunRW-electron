@@ -1,0 +1,127 @@
+
+/*--------------------
+2. Navigation
+--------------------*/
+
+.navbar-default {
+	background-color: rgb(250, 250, 250);
+	border-color: transparent;
+}
+.navbar-default .navbar-brand {
+	color: #fff;
+	font-family: "Montserrat",sans-serif;
+    padding: 0px;
+}
+.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus,.navbar-default .navbar-brand:active,.navbar-default .navbar-brand.active {
+	color: #e71425
+}
+.navbar-default .navbar-collapse {
+	border-color: rgba(216, 216, 216, 0.02)
+}
+.navbar-default .navbar-toggle {
+	background-color: #e71425;
+	border-color: #e71425
+}
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #fff
+}
+.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus {
+	background-color: #e71425
+}
+.navbar-default .nav li a {
+	font-family: 'Niramit', sans-serif;
+	text-transform: uppercase;
+	font-weight: 400;
+	letter-spacing: 1px;
+	margin-top: 2px;
+
+	color:rgb(27, 27, 27)
+}
+
+.navbar-default .nav li a,.navbar-default .nav li a {
+	color: black;
+}
+.navbar-default.navbar-shrink .nav li a,.navbar-default.navbar-shrink .nav li a {
+	color: black;
+}
+
+.navbar-default.navbar-shrink .nav li a:hover,.navbar-default.navbar-shrink .nav li a:focus {
+	color: #e71425;
+	outline: 0
+}
+.navbar-default .nav li a:hover,.navbar-default .nav li a:focus {
+	color: #e71425;
+	outline: 0
+}
+
+.navbar-default .navbar-nav>.active>a {
+	border-radius: 0;
+	color: #fff;
+	background-color: #e71425
+}
+.navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus {
+	color: #fff;
+	background-color: #e71425
+}
+.darkLogo ,.lightLogo{
+	background: url("../../../assets/images/logo.png");
+	width: 175px ;
+	height: 55px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+@media (min-width:768px) {
+	.lightLogo {
+		background: url("../../../assets/images/logoLight.png");
+		width: 175px ;
+	height: 55px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	}
+	.darkLogo {
+		background: url("../../../assets/images/logo.png");
+		width: 175px ;
+		height: 55px;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+
+	.navbar-default .nav li a,.navbar-default .nav li a {
+		color: white;
+	}
+	.navbar-default.navbar-shrink .nav li a,.navbar-default.navbar-shrink .nav li a {
+		color: black;
+	}
+
+	
+	.navbar-default
+	{
+		background-color: transparent;
+		padding: 25px 0;
+		-webkit-transition:padding .3s;
+		-moz-transition:padding .3s;
+		transition:padding .3s;
+		border:0
+	}
+	.navbar-default .navbar-brand {
+		font-size: 2em;
+		-webkit-transition:all .3s;
+		-moz-transition:all .3s;
+		transition:all .3s
+	}
+	.navbar-default .navbar-nav>.active>a {
+		border-radius: 3px
+	}
+	.navbar-default.navbar-shrink {
+		background-color: rgb(255, 255, 255);
+		padding: 10px 0;
+		-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.35);
+		-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.35);
+		box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.35);
+	}
+	.navbar-default.navbar-shrink .navbar-brand {
+		font-size: 1.5em
+	}
+
+}

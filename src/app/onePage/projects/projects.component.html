@@ -1,0 +1,63 @@
+<section id="projects" >
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+          <div class="col-lg-12  mb-4">
+              <div class="col-lg-12 text-center section-head ">
+                  <h2 class="mt-5 mb-5">
+                      Our Projects 
+                  </h2>
+                  <h3 class="deviderSpan deviderSpanLeft">..</h3> 
+                  <h3 class="deviderSpan deviderSpanRight">..</h3> 
+  
+                  <h5> Lorem Ipsum </h5>
+  
+              </div>
+
+          </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <mat-spinner class="mt-5 mb-5 mx-auto" *ngIf="isLoading"></mat-spinner>
+      <!-- start portfolio item -->
+      <div *ngIf="!isLoading">
+          <div  *ngFor="let project of projects; let j = index;" class="col-md-4 ">
+              <div (click)="openDialog(project)" class="ot-portfolio-item">
+                <figure class="effect-bubba">
+                  <img [src]="project.imagePath" [alt]="project.title" width="500" class="img-responsive" />
+                  <figcaption>
+                    <h2 ><span class="projectTitle">{{project.title}}</span></h2>
+                    <p>Branding, Design</p>
+                    <a data-toggle="modal">View more</a>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+      </div>
+  
+      <!-- end portfolio item -->
+    </div>
+  
+    </div><!-- end container -->
+  </section>
+
+
+  	<!-- Modal for portfolio item 1 -->
+		<div class="modal fade" id="Modal-1" tabindex="-1" role="dialog" aria-labelledby="Modal-label-1">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="Modal-label-1">Dean & Letter</h4>
+					</div>
+					<div class="modal-body">
+						<img src="../assets/images/demo/1.jpg" alt="img01" class="img-responsive" />
+						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
+						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>

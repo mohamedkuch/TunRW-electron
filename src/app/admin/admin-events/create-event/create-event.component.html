@@ -1,0 +1,115 @@
+
+   <!-- Fixed navbar -->
+<app-header-admin></app-header-admin>
+
+
+<div class="mainContainerEvent">
+    <!-- Card Section -->
+    <div class="container mt-5">
+      <div class="row">
+          <mat-spinner *ngIf="isLoading"></mat-spinner>
+         <div *ngIf="!isLoading" class="col-xs-7 adminShell">
+      
+              <div class="adminTitleWrapper">
+                <h3 class="widgetTitle pl-3">
+                  <strong *ngIf="mode == 'create'">New Event</strong>
+                  <strong *ngIf="mode == 'edit'">Edit Event</strong>
+                </h3>
+              </div>
+      
+              <div class="row">
+      
+                <div class="col-lg-11 mt-5">
+                    <form [formGroup]="form " class="form-horizontal" (submit)="onSaveEvent()">
+                        <div class="form-group">
+                          <label class="col-sm-3 control-label">Event Name</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" formControlName="title" placeholder="Name" >
+                            <mat-error *ngIf="form.get('title').invalid && errorFlag">Please enter a Title</mat-error>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Address</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control"  formControlName="adress" placeholder="Address" >
+                              <mat-error *ngIf="form.get('adress').invalid && errorFlag">Please enter a valid adress</mat-error>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Date</label>
+                            <div class="col-sm-9">
+                                <input type='text' class="form-control"  formControlName="date" placeholder="dd/mm/yy" />
+                                <mat-error *ngIf="form.get('date').invalid && errorFlag">Please enter a valid date</mat-error>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Event Image</label>
+                            <div class="col-sm-9">
+                                <button type="button" (click)="filePicker.click()" class="btn btn-default uploadButton">Select image</button>
+                                <input type="file"  style="visibility:hidden" (change)="onImagePicked($event)" multiple  #filePicker>
+                               <mat-error *ngIf="form.get('image').invalid && errorFlag">Please enter a valid image</mat-error>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Description</label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control" formControlName="description" rows="3" >
+      
+                                </textarea>
+                              <mat-error *ngIf="form.get('description').invalid && errorFlag">Please enter a valid description</mat-error>
+                            </div>
+                        </div>
+      
+      
+                        <button type="submit" class="btn btn-default saveButton mb-5">Save Event</button>
+      
+                    </form>
+      
+              </div>
+            </div>
+          </div>
+          <div *ngIf="!isLoading" class="col-xs-4 col-xs-offset-1 adminShell">
+      
+            <div class="adminTitleWrapper">
+              <h3 class="widgetTitle pl-3">
+                <strong >Preview Event</strong>
+              </h3>
+            </div>
+      
+                <div>
+                  <div  class="imagePreview">
+                    <img class="img-fluid" [src]="imagePreviewList[0]" [alt]="form.value.title"/>
+                  </div>
+               
+      
+                  <div class="eventDescBG ">
+                    <p class="titleEvent">
+                      {{form.value.title}}
+                    </p>
+                    <p class="text-left m-3 eventDesc ">
+                                <span class="dateEvent pl-0">
+                                  <i class="fas fa-calendar-alt pr-1"></i>     {{form.value.date}}
+                                </span>
+                      <span class="dateEvent">
+                                  <i class="fas fa-map-marker-alt pl-2 pr-1"></i>
+                                      {{form.value.adress}}
+                                </span>
+                      <br/>
+                    </p>
+                    <div class="spacingEvent ml-3" ></div>
+                    <div class="spacingEvent2 ml-3"></div>
+                    <p class="mb-4 text-left m-3 eventDesc ">
+                      {{form.value.description}}
+                    </p>
+      
+      
+                  </div>
+                </div>
+      
+      
+          </div>
+        </div>
+      
+  </div>
+</div>
+  

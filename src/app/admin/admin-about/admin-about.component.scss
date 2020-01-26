@@ -1,0 +1,64 @@
+
+.logoAdmin {
+    background-image: url(../../../assets/images/logo.png);
+    height: 35px;
+    width : 150px;
+    background-repeat: no-repeat;
+    background-size: 150px 35px ;
+    background-position-x: 12px;
+  }
+  
+  .navbar-header {
+    margin-top: 8px;
+  }
+  .saveButton {
+    background: #e71425;
+    color: white;
+    float: right;
+  }
+  .activePills, .activePills:hover, .activePills:active, .addNewEventBadge:active{
+    background: #e71425;
+    color: white;
+  }
+  .inactivePills{
+    background: #e7e7e7;
+    color: #232323;
+  }
+  .addNewEventBadge{
+    float: right;
+    background: #e71425;
+    position: relative;
+    bottom: 8px;
+    right: 8px;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.5s all;
+    font-weight: 400;
+    font-size: 17px;
+    padding: 10px;
+  }
+  .addNewEventBadge:hover {
+    background: #96030f;
+    color: white;
+    text-decoration: none;
+    transition: 0.5s all;
+  }
+  .previewIcon {
+    color: #e71425;
+  }
+  .previewContainer {
+    border:1px solid #e71425;
+    border-radius: 20px;
+    color: #e71425;
+    padding: 2rem;
+    background: white;
+  }
+  .adminSeperator{
+    max-width: 80%;
+    border-width: 1px;
+    border-color: #c7c7c7;
+    position: relative;
+    top: 60px;
+  }

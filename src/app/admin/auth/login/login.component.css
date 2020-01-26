@@ -1,0 +1,67 @@
+.mainWrapper{
+  width: 100vw;
+  height: 100vh;
+  background: rgb(150,3,15);
+background: linear-gradient(90deg, rgba(150,3,15,1) 0%, rgba(231,20,37,1) 35%, rgba(77,1,1,1) 100%);
+
+}
+.saveButton {
+  background: #e71425;
+  color: white;
+  float: right;
+}
+.widgetTitle {
+  border: none;
+  text-transform: uppercase;
+  text-align: center;
+}
+.adminTitleWrapper{
+  border-bottom: 1px solid #d8d8d8;
+  padding-bottom: 15px;
+}
+.adminShell{
+  top: 25vh;
+  position: relative;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  border: 1px solid #d8d8d8;
+  background: white;
+  border-radius: 7px;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.6);
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.6);
+  transition: 0.5s all;
+  cursor: default;
+}
+.adminTitle{
+  color: #e71425;
+}
+.buttonLogin{
+  background: #e71425;
+  color: white;
+  transition: 1.3s;
+}
+.buttonLogin:hover{
+  background: #96030f;
+}
+.logoImg{
+  max-width: 100px;
+}
+.logoWrapper{
+  top: 25vh;
+  position: relative;
+  right: 5px;
+  float: right;
+}
+.black{
+  color: #232323;
+  font-size: 12px;
+}
+.version{
+  position: absolute;
+  right: 5px;
+  bottom: -8px;
+}
+.mat-spinner::ng-deep circle {
+  stroke: #fff;
+}
