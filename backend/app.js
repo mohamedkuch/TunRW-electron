@@ -14,6 +14,10 @@ const notificationsRoutes = require("./routes/notifications");
 
 const app = express();
 
+process.env['MONGO_ATLAS_PW'] = "Ckq8Ve7JLxDnLXCY";
+process.env['JWT_KEY'] = "TunRW_Funcheta_Studio_komos_nikos";
+
+
 mongoose
   .connect(
     "mongodb+srv://Mohamed:"+ process.env.MONGO_ATLAS_PW + "@tunrwcluster-nwi9h.mongodb.net/node-angular",{ useUnifiedTopology: true , useNewUrlParser: true }
@@ -33,15 +37,15 @@ app.use("/", express.static(path.join(__dirname, "angular")));
 
 
 // use only in local
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Headers",
-  "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-  res.setHeader("Access-Control-Allow-Methods",
-  "GET, POST, PATCH, PUT, DELETE, OPTIONS");
-  next();
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader("Access-Control-Allow-Headers",
+//   "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+//   res.setHeader("Access-Control-Allow-Methods",
+//   "GET, POST, PATCH, PUT, DELETE, OPTIONS");
+//   next();
 
-});
+// });
 // user mdp = Ckq8Ve7JLxDnLXCY
 
 app.use("/api/events", eventsRoutes);

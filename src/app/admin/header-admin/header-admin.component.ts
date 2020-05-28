@@ -143,6 +143,7 @@ export class HeaderAdminComponent implements OnInit {
         break;
     }
       default: {
+        this.homeFlag = true;
          break;
       }
     }

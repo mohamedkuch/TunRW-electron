@@ -12,8 +12,8 @@
     "start:server": "nodemon ./backend/server.js",
     "electron": "electron .",
     "electron-build": "ng build --prod && electron .",
-    "electron-package-win": "electron-packager . --platform=win32",
-    "electron-package-mac": "electron-packager . --platform=darwin"
+    "electron-package-win": "electron-packager . --platform=win32 --asar",
+    "electron-package-mac": "electron-packager . --platform=darwin  --asar"
   },
   "private": true,
   "dependencies": {

@@ -3,13 +3,12 @@ const Notification = require("../models/notifications");
 const User = require("../models/user");
 
 exports.createProject = (req,res,next) => {
-    const url = req.protocol + '://' + req.get("host");
     const post = new Project({
       title : req.body.title,
       date : req.body.date,
       adress : req.body.adress,
       description : req.body.description,
-      imagePath: url + "/images/" + req.files[0].filename,
+      imagePath: req.body.imagePath,
       creator: req.userData.userId
     });
     User.find().select('_id')
@@ -79,18 +78,14 @@ exports.createProject = (req,res,next) => {
   }
 
   exports.updateProject = (req, res, next) => {
-    let imageURL = req.body.imagePath;
-    if(req.file){
-      const url = req.protocol + '://' + req.get("host");
-      imageURL = url + "/images/" + req.file.filename;
-    }
+
     const post = new Project({
       _id: req.body.id,
       title : req.body.title,
       date : req.body.date,
       adress : req.body.adress,
       description : req.body.description,
-      imagePath : imageURL,
+      imagePath : req.body.imagePath,
       creator: req.body.userId
     });
    

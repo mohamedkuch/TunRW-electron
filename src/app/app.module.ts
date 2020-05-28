@@ -5,15 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { OnePageComponent } from './onePage/onepage.component';
-import { HeaderComponent } from './onePage/header/header.component';
-import { TopCoverComponent } from './onePage/topcover/topcover.component';
-import { AboutComponent } from './onePage/about/about.component';
-import { ServicesComponent } from './onePage/services/services.component';
-import { EventsComponent } from './onePage/events/events.component';
-import { ProjectsComponent, DialogOverviewExampleDialog } from './onePage/projects/projects.component';
-import { PartnersComponent } from './onePage/partners/partners.component';
-import { ContactComponent } from './onePage/contact/contact.component';
 
 
 import { PageNotFoundComponent } from './404/pagenotfound.component';
@@ -57,16 +48,7 @@ import { CreateAboutTextComponent } from './admin/admin-about/create-text-about/
 import { AdminListAboutTextComponent } from './admin/admin-about/list-about-text/list-about.component';
 @NgModule({
   declarations: [
-    OnePageComponent,
     AppComponent,
-    HeaderComponent ,
-    TopCoverComponent,
-    AboutComponent,
-    ServicesComponent,
-    EventsComponent,
-    ProjectsComponent,
-    PartnersComponent,
-    ContactComponent,
     AdminComponent,
 
     MembersAdminComponent,
@@ -97,7 +79,6 @@ import { AdminListAboutTextComponent } from './admin/admin-about/list-about-text
     LoginComponent,
     HeaderAdminComponent,
     ErrorComponent,
-    DialogOverviewExampleDialog,
     PageNotFoundComponent
   ],
   imports: [
@@ -124,7 +105,7 @@ import { AdminListAboutTextComponent } from './admin/admin-about/list-about-text
   
   ],
   bootstrap: [AppComponent],
-  entryComponents: [ErrorComponent, DialogOverviewExampleDialog]
+  entryComponents: [ErrorComponent]
 })
 export class AppModule {
 
