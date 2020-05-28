@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: "https://tunrw-backend.herokuapp.com/api"
+  apiUrl: "https://www.med-ks.pro/api"
 };
