@@ -1,17 +1,17 @@
 <mat-spinner class="mt-5 mb-5" *ngIf="isLoading"></mat-spinner>
 <table class="table table-hover"  *ngIf="events.length > 0 && !isLoading">
       <thead>
-        <tr>
-          <th>#</th>
+        <tr class="eventTableRowHead">
+          <th class="pl-5" style="width: 5%">ID</th>
           <th>Event Name</th>
           <th>Created By</th>
           <th class="text-center" style="width: 5%">Edit</th>
-          <th class="text-center" style="width: 5%">Delete</th>
+          <th class="text-center pr-5" style="width: 5%">Delete</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let event of events; let j = index">
-          <th scope=row>{{j+1}}</th>
+        <tr class="eventTableRow" *ngFor="let event of events; let j = index">
+          <td class="pl-5" scope=row>{{j+1}}</td>
           <td> {{event.title}}</td>
           <td> {{event.creator}}</td>
 

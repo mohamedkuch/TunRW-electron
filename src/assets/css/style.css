@@ -27,11 +27,7 @@ body {
   font-family: 'Titillium Web', sans-serif;
 }
 
-hr {
-  max-width: 50px;
-  border-width: 3px;
-  border-color: #e71425;
-}
+
 .text-white {
   color: white;
 }
@@ -684,5 +680,6 @@ and (max-width : 480px) {
     margin-bottom: 0px !important;
 }
 .mainContainerEvent ,.subHeaderWrapper, .previewWrapper{
-    padding-left: 130px;
+    padding-left: 200px;
+    padding-right: 70px;
 }
