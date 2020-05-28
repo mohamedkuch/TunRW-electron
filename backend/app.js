@@ -14,6 +14,10 @@ const notificationsRoutes = require("./routes/notifications");
 
 const app = express();
 
+process.env['MONGO_ATLAS_PW'] = "Ckq8Ve7JLxDnLXCY";
+process.env['JWT_KEY'] = "TunRW_Funcheta_Studio_komos_nikos";
+
+
 mongoose
   .connect(
     "mongodb+srv://Mohamed:"+ process.env.MONGO_ATLAS_PW + "@tunrwcluster-nwi9h.mongodb.net/node-angular",{ useUnifiedTopology: true , useNewUrlParser: true }

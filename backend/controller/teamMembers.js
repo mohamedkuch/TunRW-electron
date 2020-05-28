@@ -8,7 +8,7 @@ exports.createTeamMember = (req,res,next) => {
     const post = new TeamMember({
       title : req.body.title,
       position : req.body.position,
-      imagePath: url + "/images/" + req.files[0].filename,
+      imagePath: req.body.imagePath,
       creator: req.userData.userId
     });
     User.find().select('_id')
@@ -76,19 +76,11 @@ exports.createTeamMember = (req,res,next) => {
   }
 
   exports.updateTeamMember = (req, res, next) => {
-    let imageURL = req.body.imagePath;
-
-    if(req.files){
-      const url = req.protocol + '://' + req.get("host");
-      imageURL = url + "/images/" + req.files[0].filename;
-    }
-
-
     const post = new TeamMember({
       _id: req.body.id,
       title : req.body.title,
       position : req.body.position,
-      imagePath : imageURL,
+      imagePath : req.body.imagePath,
       creator: req.body.userId
     });
     User.find().select('_id')

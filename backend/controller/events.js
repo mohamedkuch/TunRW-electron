@@ -3,16 +3,6 @@ const Notification = require("../models/notifications");
 const User = require("../models/user");
 
 exports.createEvent = (req,res,next) => {
-    const url = req.protocol + '://' + req.get("host");
-    var imagesArray = new Array();
-
-    var imagesArray = []; 
- 
-    
-    var output = req.files.filter(function(value, index, arr){
-      let imageFullPath = url + "/images/" + value["filename"] ; 
-      imagesArray.push(imageFullPath); // add at the end 
-    });
 
     User.find().select('_id')
     .then(documents => {
@@ -28,7 +18,7 @@ exports.createEvent = (req,res,next) => {
         date : req.body.date,
         adress : req.body.adress,
         description : req.body.description,
-        imagePath: imagesArray,
+        imagePath: req.body.imagePath,
         creator: req.userData.userId
       });
       post.save().then(result => {
@@ -94,28 +84,13 @@ exports.createEvent = (req,res,next) => {
 
   exports.updateEvent = (req, res, next) => {
 
-    let imageURL = req.body.imagePath;
-
-    if(req.files){
-      var imagesArray = new Array();
-      var imagesArray = []; 
-      const url = req.protocol + '://' + req.get("host");
-      
-      var output = req.files.filter(function(value, index, arr){
-        let imageFullPath = url + "/images/" + value["filename"] ; 
-        imagesArray.push(imageFullPath); // add at the end 
-      });
-      imageURL = imagesArray;
-    }
-  
-
     const post = new Event({
       _id: req.body.id,
       title : req.body.title,
       date : req.body.date,
       adress : req.body.adress,
       description : req.body.description,
-      imagePath : imageURL,
+      imagePath: req.body.imagePath,
       creator: req.body.userId
     });
 

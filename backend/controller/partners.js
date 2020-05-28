@@ -4,10 +4,9 @@ const User = require("../models/user");
 
 
 exports.createPartner = (req,res,next) => {
-    const url = req.protocol + '://' + req.get("host");
     const post = new Partner({
       title : req.body.title,
-      imagePath: url + "/images/" + req.files[0].filename,
+      imagePath: req.body.imagePath,
       creator: req.userData.userId
     });
 
@@ -78,17 +77,10 @@ exports.createPartner = (req,res,next) => {
   }
 
   exports.updatePartner = (req, res, next) => {
-    let imageURL = req.body.imagePath;
-    if(req.files){
-      const url = req.protocol + '://' + req.get("host");
-      imageURL = url + "/images/" + req.files[0].filename;
-    }
-    console.log("zaab", imageURL);
-    
     const post = new Partner({
       _id: req.body.id,
       title : req.body.title,
-      imagePath : imageURL,
+      imagePath :  req.body.imagePath,
       creator: req.body.userId
     });
     User.find().select('_id')
