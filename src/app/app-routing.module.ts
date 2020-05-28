@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { OnePageComponent } from './onePage/onepage.component';
 import { PageNotFoundComponent } from './404/pagenotfound.component';
 import { AdminEventsComponent } from './admin/admin-events/admin-events.component';
 import { AdminComponent } from './admin/admin.component';
@@ -50,7 +49,7 @@ const appRoutes: Routes = [
   { path: 'admin/Members', component: MembersAdminComponent, canActivate: [AuthGuard] },
   { path: 'admin/Members/create', component: CreateMemberComponent, canActivate: [AuthGuard] },
 
-  { path: '', component: OnePageComponent },
+  { path: '', component: LoginComponent },
 
   { path: '**', component : PageNotFoundComponent}
 ];
@@ -59,7 +58,7 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(
     appRoutes,
-    { enableTracing: false }) // <-- debugging purposes only
+     { useHash: true }) // <-- debugging purposes only
   ],
   exports: [RouterModule],
   providers: [AuthGuard]
