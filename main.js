@@ -35,6 +35,17 @@ function createWindow() {
     win.on('closed', function () {
         win = null
     })
+
+    win.webContents.on('did-fail-load', () => {
+        console.log('did-fail-load');
+        win.loadURL(url.format({
+            pathname: path.join(__dirname, `/dist/TunRW-Angular/index.html`),
+            protocol: 'file:',
+            slashes: true
+        }));
+        // REDIRECT TO FIRST WEBPAGE AGAIN
+    });
+
 }
 
 // Create window on electron intialization

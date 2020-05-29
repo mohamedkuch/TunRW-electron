@@ -53,9 +53,10 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
+
+
   imports: [
-    RouterModule.forRoot(
-    appRoutes) // <-- debugging purposes only
+    RouterModule.forRoot(appRoutes) // add :{ useHash: true }// <-- debugging purposes only
   ],
   exports: [RouterModule],
   providers: [AuthGuard]
