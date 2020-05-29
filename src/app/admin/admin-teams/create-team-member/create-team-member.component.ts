@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import { TeamMembersService } from '../teamMembers.service';
+import { TeamMembersService } from '../../admin-about/teamMembers.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { TeamMembers } from '../teamMeambers.modal';
+import { TeamMembers } from '../../admin-about/teamMeambers.modal';
 import { mimeType } from '../../mime-type.validator';
 @Component ({
   selector : 'app-create-team-member',

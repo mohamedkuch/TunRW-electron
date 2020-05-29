@@ -14,8 +14,9 @@ import { CreatePartnerComponent } from './admin/admin-partners/create-partner/cr
 import { AdminServicesComponent } from './admin/admin-services/admin-services.component';
 import { CreateServiceComponent } from './admin/admin-services/create-service/create-service.component';
 import { AdminAboutComponent } from './admin/admin-about/admin-about.component';
-import { CreateTeamMemberComponent } from './admin/admin-about/create-team-member/create-team-member.component';
+import { CreateTeamMemberComponent } from './admin/admin-teams/create-team-member/create-team-member.component';
 import { CreateAboutTextComponent } from './admin/admin-about/create-text-about/create-text-about.component';
+import { AdminTeamsComponent } from './admin/admin-teams/admin-teams.component';
 
 const appRoutes: Routes = [
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
@@ -39,13 +40,16 @@ const appRoutes: Routes = [
   { path: 'admin/Partners/edit/:partnerId', component: CreatePartnerComponent, canActivate: [AuthGuard] },
 
   { path: 'admin/About', component: AdminAboutComponent, canActivate: [AuthGuard] },
-  { path: 'admin/About/create', component: CreateTeamMemberComponent, canActivate: [AuthGuard] },
-  { path: 'admin/About/edit/:teamMemberId', component: CreateTeamMemberComponent, canActivate: [AuthGuard] },
   { path: 'admin/About/text/create', component: CreateAboutTextComponent, canActivate: [AuthGuard] },
   { path: 'admin/About/text/edit/:aboutTextId', component: CreateAboutTextComponent, canActivate: [AuthGuard] },
   
   { path: 'admin/Members', component: MembersAdminComponent, canActivate: [AuthGuard] },
   { path: 'admin/Members/create', component: CreateMemberComponent, canActivate: [AuthGuard] },
+
+  { path: 'admin/Teams', component: AdminTeamsComponent, canActivate: [AuthGuard] },
+  { path: 'admin/Teams/create', component: CreateTeamMemberComponent, canActivate: [AuthGuard] },
+  { path: 'admin/Teams/edit/:teamMemberId', component: CreateTeamMemberComponent, canActivate: [AuthGuard] },
+
 
   { path: '', component: LoginComponent },
 
