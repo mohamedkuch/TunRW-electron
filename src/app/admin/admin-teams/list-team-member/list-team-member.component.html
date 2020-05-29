@@ -15,7 +15,7 @@
           <td> {{teamMember.title}}</td>
           <td> {{teamMember.creator}}</td>
 
-          <td class="text-center"><a [routerLink]="['/admin/About/edit', teamMember.id]" class="deleteButton"><i class="fas fa-edit"></i></a></td>
+          <td class="text-center"><a [routerLink]="['/admin/Teams/edit', teamMember.id]" class="deleteButton"><i class="fas fa-edit"></i></a></td>
           <td class="text-center pr-5"><span (click)="onDelete(teamMember.id)" class="deleteButton"><i class="fas fa-trash deleteButton"></i></span></td>
         </tr>
 

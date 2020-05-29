@@ -36,21 +36,21 @@
 }
 .navItemContainer{
   height: auto;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  margin-left: 15px;
+  margin-bottom: 8px;
+  margin-top: 8px;
   transition: 0.3s all;
   cursor: pointer;
   color:black;
-  font-size: 14px;
+  font-size: 12px;
   border-right: 2px solid white;
 
 }
 .logoContainer{
-  margin-top:17px ;
+  padding-top:17px ;
   padding-bottom:17px ;
   text-align: center;
   color:black;
+  background-color: #e71425;
   cursor: pointer;
   border-bottom: 1px solid #6868683b;
   font-weight: bold;
@@ -69,22 +69,19 @@
   color:#e71425;
 }
 
-.navbarLogoTextActive {
-  color: #e71425 !important;
-}
 
 .navItemContaineractive {
   height: auto;
-  margin-bottom: 5px;
-  margin-top: 5px;
+  margin-bottom: 8px;
+  margin-top: 8px;
   transition: 1s all;
-  margin-left: 15px;
-  border-right: 2px solid #e71425;
+  border-left: 4px solid #e71425;
+  font-size: 12px;
   cursor: pointer;
 }
 
 .navItemContainer:hover {
-  border-right: 2px solid #e71425;
+  border-left: 4px solid #e71425;
   color:#e71425;
 }
 .lougoutContainer {
@@ -103,9 +100,11 @@
 
 }
 .navItemContaineractive i{
-  font-size: 10px;
+  font-size: 12px;
   width: 12%;
   color:#e71425;
+
+  margin-left: 15px;
   text-align: center;
 
 }
@@ -126,9 +125,11 @@ word-break: break-all;
 
 }
 .navItemContainer i {
-  font-size: 10px;
+  font-size: 12px;
   width: 12%;
   text-align: center;
+  margin-left: 15px;
+
 
 }
 .navSeperator{
@@ -148,9 +149,15 @@ word-break: break-all;
 a {
   text-decoration: none !important;
 }
-.navbarItemText{
-  margin-bottom: 10px;
-
+.navbarLogo , .navbarLogoActive{
+  mask-image: url(../../../assets/images/logo.png);
+  mask-repeat: no-repeat;
+  mask-size: 120px;
+  background-color: #ffffff;
+  width: 120px;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .navbarItemTextActive {
   color: #e71425 !important;
