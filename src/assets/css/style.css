@@ -39,7 +39,7 @@ h5,
 h6 {
 font-weight: 300;
     letter-spacing: 0.4px;
-    font-family: 'Abel', sans-serif;
+    font-family: 'Abel', sans-serif !important;
     color: #232323;
 }
 
@@ -350,13 +350,7 @@ figure.effect-bubba:hover p {
     color: #fff;
 }
 
-.bg-img1 {
-    background-image: url(../images/demo/office-bg.jpg);
-    background-size: cover !important;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+
 
 .light-bg {
 	background-color: #f8f8f8;

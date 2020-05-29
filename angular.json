@@ -28,14 +28,19 @@
               },
               "src/styles.css",
               "src/assets/css/spacing.min.css",
+              "src/assets/css/style.css",
               "node_modules/slick-carousel/slick/slick.scss",
-              "node_modules/slick-carousel/slick/slick-theme.scss"
-            
+              "node_modules/slick-carousel/slick/slick-theme.scss",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/fontawesome/css/all.min.css"
             ],
             "scripts": [
               "src/assets/js/theme-scripts.js",
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/slick-carousel/slick/slick.min.js"
+              "node_modules/slick-carousel/slick/slick.min.js",
+              "src/assets/js/ie-emulation-modes-warning.js",
+              "src/assets/js/slick.js",
+              "src/assets/js/bootstrap.min.js"
             ]
           },
           "configurations": {
