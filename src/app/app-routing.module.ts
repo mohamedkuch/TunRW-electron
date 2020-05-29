@@ -40,8 +40,8 @@ const appRoutes: Routes = [
   { path: 'admin/Partners/edit/:partnerId', component: CreatePartnerComponent, canActivate: [AuthGuard] },
 
   { path: 'admin/About', component: AdminAboutComponent, canActivate: [AuthGuard] },
-  { path: 'admin/About/text/create', component: CreateAboutTextComponent, canActivate: [AuthGuard] },
-  { path: 'admin/About/text/edit/:aboutTextId', component: CreateAboutTextComponent, canActivate: [AuthGuard] },
+  { path: 'admin/About/create', component: CreateAboutTextComponent, canActivate: [AuthGuard] },
+  { path: 'admin/About/edit/:aboutTextId', component: CreateAboutTextComponent, canActivate: [AuthGuard] },
   
   { path: 'admin/Members', component: MembersAdminComponent, canActivate: [AuthGuard] },
   { path: 'admin/Members/create', component: CreateMemberComponent, canActivate: [AuthGuard] },

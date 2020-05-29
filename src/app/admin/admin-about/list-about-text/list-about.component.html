@@ -15,7 +15,7 @@
           <td> {{singleText.text}}</td>
           <td> {{singleText.creator}}</td>
 
-          <td class="text-center"><a [routerLink]="['/admin/About/text/edit', singleText.id]" class="deleteButton"><i class="fas fa-edit"></i></a></td>
+          <td class="text-center"><a [routerLink]="['/admin/About/edit', singleText.id]" class="deleteButton"><i class="fas fa-edit"></i></a></td>
           <td class="text-center pr-5"><span (click)="onDelete(singleText.id)" class="deleteButton"><i class="fas fa-trash deleteButton"></i></span></td>
         </tr>
 

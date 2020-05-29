@@ -74,26 +74,8 @@ export class HeaderAdminComponent implements OnInit {
               private authService: AuthService ,
               private notificationService: NotificationService) {
     this.currentUrl = this.router.url;
-    if (this.currentUrl.includes('/admin/Events/edit')) {
-      this.eventEditFlag = true;
-    }
-    if (this.currentUrl.includes('/admin/Projects/edit')) {
-      this.projectEditFlag = true;
-    }
-    if (this.currentUrl.includes('/admin/Partners/edit')) {
-      this.partnersEditFlag = true;
-    }
-    if (this.currentUrl.includes('/admin/Services/edit')) {
-      this.servicesEditFlag = true;
-    }
-    if (this.currentUrl.includes('/admin/About/edit')) {
-      this.aboutEditFlag = true;
-    }
+  
     switch(this.currentUrl) {
-      case '/admin': {
-        this.homeFlag = true;
-        break;
-      }
       case '/admin/Events': {
         this.eventFlag = true;
         break;
@@ -147,6 +129,29 @@ export class HeaderAdminComponent implements OnInit {
          break;
       }
     }
+
+    if (this.currentUrl.includes('/admin/Events/edit')) {
+      this.eventEditFlag = true;
+      this.homeFlag = false;
+    }
+    if (this.currentUrl.includes('/admin/Projects/edit')) {
+      this.projectEditFlag = true;
+      this.homeFlag = false;
+    }
+    if (this.currentUrl.includes('/admin/Partners/edit')) {
+      this.partnersEditFlag = true;
+      this.homeFlag = false;
+
+    }
+    if (this.currentUrl.includes('/admin/Services/edit')) {
+      this.servicesEditFlag = true;
+      this.homeFlag = false;
+    }
+    if (this.currentUrl.includes('/admin/About/edit')) {
+      this.aboutEditFlag = true;
+      this.homeFlag = false;
+    }
+
    }
   ngOnInit() {
     this.authService.autoAuthUser();
