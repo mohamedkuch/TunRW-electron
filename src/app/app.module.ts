@@ -46,7 +46,6 @@ import { AdminListTeamMembersComponent } from './admin/admin-about/list-team-mem
 import { CreateTeamMemberComponent } from './admin/admin-about/create-team-member/create-team-member.component';
 import { CreateAboutTextComponent } from './admin/admin-about/create-text-about/create-text-about.component';
 import { AdminListAboutTextComponent } from './admin/admin-about/list-about-text/list-about.component';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -102,8 +101,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
   providers: [
     {provide : HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},  
     {provide : HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
-    { provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig },
-    {provide: LocationStrategy, useClass: HashLocationStrategy}
+    { provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig }
   ],
   bootstrap: [AppComponent],
   entryComponents: [ErrorComponent]
