@@ -40,7 +40,6 @@ import { AdminListServicesComponent } from './admin/admin-services/list-service/
 import { CreateServiceComponent } from './admin/admin-services/create-service/create-service.component';
 
 
-import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { AdminAboutComponent } from './admin/admin-about/admin-about.component';
 import { AdminListTeamMembersComponent } from './admin/admin-about/list-team-member/list-team-member.component';
 import { CreateTeamMemberComponent } from './admin/admin-about/create-team-member/create-team-member.component';
@@ -91,7 +90,6 @@ import { AdminListAboutTextComponent } from './admin/admin-about/list-about-text
     HttpClientModule,
     MatSliderModule,
     MatButtonModule,
-    SlickCarouselModule,
     MatTooltipModule,
     MatBadgeModule,
     MatIconModule,
