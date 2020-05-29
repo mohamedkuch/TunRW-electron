@@ -1,12 +1,4 @@
 
-.logoAdmin {
-  background-image: url(../../../assets/images/logo.png);
-  height: 35px;
-  width : 150px;
-  background-repeat: no-repeat;
-  background-size: 150px 35px ;
-  background-position-x: 12px;
-}
 
 .navbar-header {
   margin-top: 8px;

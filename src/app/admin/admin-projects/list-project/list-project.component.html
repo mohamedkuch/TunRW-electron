@@ -5,8 +5,8 @@
           <th class="pl-5" style="width: 5%">ID</th>
           <th>Project Name</th>
           <th>Created By</th>
-          <th class="text-center" style="width: 5%">Edit</th>
-          <th class="text-center" style="width: 5%">Delete</th>
+          <th class="text-center" style="width: 10%">Edit</th>
+          <th class="text-center pr-5" style="width: 10%">Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -16,7 +16,7 @@
           <td> {{project.creator}}</td>
 
           <td class="text-center"><a [routerLink]="['/admin/Projects/edit', project.id]" class="deleteButton"><i class="fas fa-edit"></i></a></td>
-          <td  class="text-center"><span (click)="onDelete(project.id)" class="deleteButton"><i class="fas fa-trash deleteButton"></i></span></td>
+          <td  class="text-center pr-5"><span (click)="onDelete(project.id)" class="deleteButton"><i class="fas fa-trash deleteButton"></i></span></td>
         </tr>
 
       </tbody>
