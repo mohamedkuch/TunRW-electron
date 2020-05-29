@@ -6,16 +6,21 @@
   <div class="container-fluid mt-5">
     <div class="row">
       <div class="col-xs-12">
+        <div class="addButton mt-5 mb-5">
+          <div class="mx-auto buttonWrapper">
+            <a routerLink="/admin/About/create" class="addNewEventBadge"><i class="fas fa-plus mr-4"></i>Add New Team
+              Member</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12">
         <!-- About Tab -->
         <div class="AlleventTab">
           <div class="widgetTitleWrapper pb-2">
-            <h3 class="widgetTitle pl-3">All Team Members
-
-              <a routerLink="/admin/About/create" class="addNewEventBadge"><i class="fas fa-plus"></i> | Add New Team
-                Member</a>
-
+            <h3 class="widgetTitle pl-5">All Team Members
             </h3>
-
+            <h5 class="widgetSubTitle pl-5">Team Members in Total</h5>
           </div>
           <app-admin-list-team-member></app-admin-list-team-member>
 
@@ -30,15 +35,23 @@
   <div class="container-fluid mt-5">
     <div class="row">
       <div class="col-xs-12">
+        <div class="addButton mt-5 mb-5">
+          <div class="mx-auto buttonWrapper">
+            <a routerLink="/admin/About/text/create" class="addNewEventBadge"><i class="fas fa-plus mr-4"></i>Add New
+              Text</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12">
         <!-- About Tab -->
         <div class="AlleventTab">
           <div class="widgetTitleWrapper pb-2">
-            <h3 class="widgetTitle pl-3">About Section
 
-              <a routerLink="/admin/About/text/create" class="addNewEventBadge"><i class="fas fa-plus"></i> | Add New
-                Text</a>
-
+            <h3 class="widgetTitle pl-5">About Section
             </h3>
+            <h5 class="widgetSubTitle pl-5">About Sections in Total</h5>
+
 
           </div>
           <app-admin-list-about-text></app-admin-list-about-text>

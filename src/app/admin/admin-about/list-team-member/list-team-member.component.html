@@ -1,22 +1,22 @@
 <mat-spinner class="mt-5 mb-5" *ngIf="isLoading"></mat-spinner>
 <table class="table table-hover"  *ngIf="teamMembers.length > 0 && !isLoading">
       <thead>
-        <tr>
-          <th>#</th>
+        <tr class="eventTableRowHead">
+          <th class="pl-5" style="width: 5%">ID</th>
           <th>Team Member Name</th>
           <th>Created By</th>
-          <th class="text-center" style="width: 5%">Edit</th>
-          <th class="text-center" style="width: 5%">Delete</th>
+          <th class="text-center" style="width: 10%">Edit</th>
+          <th class="text-center pr-5" style="width: 10%">Delete</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let teamMember of teamMembers; let j = index">
-          <th scope=row>{{j+1}}</th>
+        <tr class="eventTableRow" *ngFor="let teamMember of teamMembers; let j = index">
+          <th class="pl-5" scope=row>{{j+1}}</th>
           <td> {{teamMember.title}}</td>
           <td> {{teamMember.creator}}</td>
 
           <td class="text-center"><a [routerLink]="['/admin/About/edit', teamMember.id]" class="deleteButton"><i class="fas fa-edit"></i></a></td>
-          <td class="text-center"><span (click)="onDelete(teamMember.id)" class="deleteButton"><i class="fas fa-trash deleteButton"></i></span></td>
+          <td class="text-center pr-5"><span (click)="onDelete(teamMember.id)" class="deleteButton"><i class="fas fa-trash deleteButton"></i></span></td>
         </tr>
 
       </tbody>
