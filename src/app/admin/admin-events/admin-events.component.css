@@ -1,18 +1,2 @@
 
 
-.navbar-header {
-  margin-top: 8px;
-}
-.saveButton {
-  background: #e71425;
-  color: white;
-  float: right;
-}
-.activePills, .activePills:hover, .activePills:active, .addNewEventBadge:active{
-  background: #e71425;
-  color: white;
-}
-.inactivePills{
-  background: #e7e7e7;
-  color: #232323;
-}
