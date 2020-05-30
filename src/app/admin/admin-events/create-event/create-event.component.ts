@@ -23,11 +23,10 @@ export class CreateEventComponent implements OnInit {
   isLoading = false;
   form: any;
   imageInputCounter = 0;
-  options = {  year: 'numeric', month: 'short', day: 'numeric' };
+  options = { year: 'numeric', month: 'short', day: 'numeric' };
 
 
   constructor(public eventsService: EventService,
-    private formBuilder: FormBuilder,
     public route: ActivatedRoute) {
   }
 
@@ -37,7 +36,7 @@ export class CreateEventComponent implements OnInit {
       adress: new FormControl(null, { validators: [Validators.required] }),
       date: new FormControl(null, { validators: [Validators.required] }),
       description: new FormControl(null, { validators: [Validators.required] }),
-      image: new FormArray([new FormControl(null,  { validators: [Validators.required] })])
+      image: new FormArray([new FormControl(null, { validators: [Validators.required] })])
     });
 
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
@@ -86,7 +85,6 @@ export class CreateEventComponent implements OnInit {
     this.errorFlag = false;
   }
   onSaveEvent() {
-    console.log("#####", this.form.value.date.toLocaleDateString('en-US', this.options));
     if (this.form.invalid) {
       this.errorFlag = true;
       return;

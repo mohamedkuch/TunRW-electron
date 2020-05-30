@@ -66,7 +66,6 @@ export class EventService {
       // Add the file to the request.
       postData.append('image', file, title);
     }
-    console.log("adding Event", image);
 
     this.http.post<{ message: string, event: Event }>(BACKEND_URL, postData)
       .subscribe((data) => {
