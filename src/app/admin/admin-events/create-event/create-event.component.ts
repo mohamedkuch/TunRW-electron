@@ -23,6 +23,8 @@ export class CreateEventComponent implements OnInit {
   isLoading = false;
   form: any;
   imageInputCounter = 0;
+  options = {  year: 'numeric', month: 'short', day: 'numeric' };
+
 
   constructor(public eventsService: EventService,
     private formBuilder: FormBuilder,
@@ -84,20 +86,21 @@ export class CreateEventComponent implements OnInit {
     this.errorFlag = false;
   }
   onSaveEvent() {
+    console.log("#####", this.form.value.date.toLocaleDateString('en-US', this.options));
     if (this.form.invalid) {
       this.errorFlag = true;
       return;
     }
     if (this.mode === 'create') {
       this.eventsService.addEvent(this.form.value.title,
-        this.form.value.date.toLocaleString(),
+        this.form.value.date.toLocaleDateString('en-US', this.options),
         this.form.value.adress,
         this.form.value.description,
         this.form.value.image
       );
     } else {
       this.eventsService.updateEvent(this.eventId, this.form.value.title,
-        this.form.value.date.toLocaleString(),
+        this.form.value.date.toLocaleDateString('en-US', this.options),
         this.form.value.adress,
         this.form.value.description,
         this.form.value.image
