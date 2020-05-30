@@ -372,3 +372,22 @@ header {
 .saveButtonWrapper{
   width: fit-content;
 }
+.plusButton , .minusButton {
+  width: fit-content;
+  background: #e71425;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 10px;
+}
+.plusButton:hover , .minusButton:hover {
+  background: #96030f;
+}
+.buttonWrapper {
+  display: inline-flex;
+  width: 100%;
+}
+.buttonContainer{
+  display: inline-flex;
+}

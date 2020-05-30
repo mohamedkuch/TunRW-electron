@@ -48,13 +48,13 @@ export class EventService {
       date: string;
       adress: string;
       description: string;
-      imagePath: string;
+      imagePath: Array<string>;
       creator: string
     }>(BACKEND_URL + "/" + id);
   }
 
   // Add New Event
-  addEvent(title: string, date: string, adress: string, description: string, image: string[50]) {
+  addEvent(title: string, date: string, adress: string, description: string, image: Array<string>) {
     const postData = new FormData();
     postData.append('title', title);
     postData.append('date', date);
@@ -76,7 +76,7 @@ export class EventService {
   }
 
   // update Event
-  updateEvent(id: string, title: string, date: string, adress: string, description: string, image: string[50]) {
+  updateEvent(id: string, title: string, date: string, adress: string, description: string, image: Array<string>) {
     let postData: Event;
 
     postData = {
