@@ -53,20 +53,20 @@
                 <div class="form-group">
                   <label class="col-sm-3 control-label">Event Image</label>
 
-                  <div class="col-sm-8"  formArrayName="image">
+                  <div class="col-sm-8" formArrayName="image">
                     <div *ngFor="let item of form.controls.image.controls; let i = index">
                       <div class="mt-3" *ngIf="i>0"></div>
 
-                      <input type="text"  class="form-control"  formControlName="{{i}}"  placeholder="imagePath"  />
+                      <input type="text" class="form-control" formControlName="{{i}}" placeholder="imagePath" />
+                      <mat-error *ngIf="form.get('image').controls[i].invalid && errorFlag">Please enter a valid image</mat-error>
+
                     </div>
                   </div>
 
                 </div>
 
-                
-
                 <div class="form-group">
-                  <div class="col-sm-8 col-lg-offset-3">
+                  <div class="col-sm-8 col-sm-offset-3">
                     <div class="buttonWrapper">
                       <div class="mx-auto buttonContainer">
                         <div (click)="onMinusClick()" class="minusButton ml-2 mr-2">

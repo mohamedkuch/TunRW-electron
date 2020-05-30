@@ -22,7 +22,7 @@ export class CreateEventComponent implements OnInit {
   event: Event;
   isLoading = false;
   form: any;
-  imageInputCounter = 1;
+  imageInputCounter = 0;
 
   constructor(public eventsService: EventService,
     private formBuilder: FormBuilder,
@@ -50,6 +50,8 @@ export class CreateEventComponent implements OnInit {
             , date: postData.date, adress: postData.adress, title: postData.title, imagePath: postData.imagePath, creator: postData.creator
           };
 
+          for (let index = 0; index < this.event.imagePath.length - 1; index++)
+            this.onPlusClick();
 
 
           this.form.setValue({
@@ -58,6 +60,7 @@ export class CreateEventComponent implements OnInit {
             image: this.event.imagePath
           });
 
+          console.log("###", this.event);
 
           console.log("###", this.form);
 
@@ -70,6 +73,7 @@ export class CreateEventComponent implements OnInit {
     });
   }
   onMinusClick() {
+    console.log(this.imageInputCounter);
     if (this.imageInputCounter > 0) {
       this.form.controls['image'].removeAt(this.imageInputCounter);
       this.imageInputCounter -= 1;
@@ -78,34 +82,33 @@ export class CreateEventComponent implements OnInit {
   }
   onPlusClick() {
     this.form.controls
-      .image.push(new FormControl(null));
+      .image.push(new FormControl(null, { validators: [Validators.required] }));
     this.imageInputCounter += 1;
+
+    this.errorFlag = false;
   }
   onSaveEvent() {
     console.log("#####", this.form);
-    // if (this.form.invalid) {
-    //   this.errorFlag = true;
-    //   return;
-    // }
-    // this.isLoading = true;
-    // if (this.mode === 'create') {
-    //   this.eventsService.addEvent( this.form.value.title,
-    //   this.form.value.date,
-    //   this.form.value.adress,
-    //   this.form.value.description,
-    //   this.form.value.image
-    // );
-
-
-    // } else {
-    //   this.eventsService.updateEvent(this.eventId, this.form.value.title,
-    //     this.form.value.date,
-    //     this.form.value.adress,
-    //     this.form.value.description,
-    //     this.form.value.image
-    //     );
-    // }
-    // this.errorFlag = false;
-    // this.form.reset();
+    if (this.form.invalid) {
+      this.errorFlag = true;
+      return;
+    }
+    if (this.mode === 'create') {
+      this.eventsService.addEvent(this.form.value.title,
+        this.form.value.date,
+        this.form.value.adress,
+        this.form.value.description,
+        this.form.value.image
+      );
+    } else {
+      this.eventsService.updateEvent(this.eventId, this.form.value.title,
+        this.form.value.date,
+        this.form.value.adress,
+        this.form.value.description,
+        this.form.value.image
+      );
+    }
+    this.errorFlag = false;
+    this.form.reset();
   }
 }
