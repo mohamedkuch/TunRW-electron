@@ -14,7 +14,6 @@ export class AdminMemberListComponent implements OnInit, OnDestroy {
   currentUser: Member;
   membersList: Member[] = [];
   membersCount: number;
-  totalEvents = 0;
   postsPerPage = 10;
   currentPage = 1;
   pageSizeOptions = [1, 2 , 5, 10, 1000];
@@ -39,6 +38,7 @@ export class AdminMemberListComponent implements OnInit, OnDestroy {
   onDelete(memberId: string) {
   }
   ngOnDestroy(){
+    this.MembersListSub.unsubscribe();
   }
   onChangePage( pageData: PageEvent){
     this.isLoading = true;

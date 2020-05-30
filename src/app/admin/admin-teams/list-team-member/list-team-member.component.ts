@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeamMembers } from '../teamMeambers.modal';
-import { TeamMembersService } from '../teamMembers.service';
+import { TeamMembers } from '../../admin-about/teamMeambers.modal';
+import { TeamMembersService } from '../../admin-about/teamMembers.service';
 import { Subscription } from 'rxjs';
 import { PageEvent } from '@angular/material';
 import { AuthService } from '../../auth/auth.service';

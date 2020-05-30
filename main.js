@@ -1,4 +1,6 @@
 const { app, BrowserWindow } = require('electron')
+const url = require("url");
+const path = require("path");
 
 let win;
 
@@ -10,23 +12,40 @@ function createWindow() {
         'minHeight': 800,
         'minWidth': 1200,
         backgroundColor: '#ffffff',
-        icon: `file//${__dirname}/dist/TunRW-Angular/assets/images/logo.png`
+        webPreferences: {
+            nodeIntegration: true
+        }
 
     })
 
-
-    win.loadURL(`file://${__dirname}/dist/TunRW-Angular/index.html`)
-
+    win.loadURL(
+        url.format({
+            pathname: path.join(__dirname, `/dist/TunRW-Angular/index.html`),
+            protocol: "file:",
+            slashes: true
+        })
+    );
 
 
 
     //// uncomment below to open the DevTools.
-    //win.webContents.openDevTools()
+    win.webContents.openDevTools()
 
     // Event when the window is closed.
     win.on('closed', function () {
         win = null
     })
+
+    win.webContents.on('did-fail-load', () => {
+        console.log('did-fail-load');
+        win.loadURL(url.format({
+            pathname: path.join(__dirname, `/dist/TunRW-Angular/index.html`),
+            protocol: 'file:',
+            slashes: true
+        }));
+        // REDIRECT TO FIRST WEBPAGE AGAIN
+    });
+
 }
 
 // Create window on electron intialization

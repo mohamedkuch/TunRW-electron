@@ -1,0 +1,37 @@
+<!-- Header -->
+<app-header-admin></app-header-admin>
+
+
+<div class="mainContainerEvent">
+    <!-- Card Section -->
+    <div class="container-fluid mt-5">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="addButton mt-5 mb-5">
+            <div class="mx-auto buttonWrapper">
+              <a routerLink="/admin/Teams/create" class="addNewEventBadge"><i class="fas fa-plus mr-4"></i>Add New Team
+                Member</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-xs-12 mb-5">
+          <!-- About Tab -->
+          <div class="AlleventTab">
+            <div class="widgetTitleWrapper pb-2">
+              <h3 class="widgetTitle pl-5">All Team Members
+              </h3>
+              <h5 class="widgetSubTitle pl-5">Team Members in Total</h5>
+            </div>
+            <app-admin-list-team-member></app-admin-list-team-member>
+  
+          </div>
+        </div>
+  
+  
+  
+      </div>
+    </div>
+ 
+  
+  </div>

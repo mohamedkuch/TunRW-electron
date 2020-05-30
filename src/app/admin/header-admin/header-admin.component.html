@@ -1,18 +1,12 @@
 <div class="mainNavbarContainer" #navBar>
   <a routerLink="/admin">
     <div *ngIf="!homeFlag" class="logoContainer">
-      <i class="fas fa-dice-d20"></i>
-
-      <span class="navbarItemText ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">
-        DASHBOARD
-      </span>
+      <div class="navbarLogo" *ngIf="bigNavbarFlag && !smallNavbarFlag">
+      </div>
     </div>
-    <div *ngIf="homeFlag" class="logoContainer activeLogo ">
-      <i class="fas fa-dice-d20"></i>
-
-      <span class="navbarLogoTextActive ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">
-        DASHBOARD
-      </span>
+    <div *ngIf="homeFlag" class="logoContainer">
+      <div class="navbarLogo" *ngIf="bigNavbarFlag && !smallNavbarFlag">
+      </div>
     </div>
   </a>
 
@@ -39,7 +33,6 @@
 
     </a>
   </div>
-  <div class="navSeperator"> </div>
 
   <!-- Events -->
   <div *ngIf="!(eventFlag || eventCreateFlag || eventEditFlag) ">
@@ -62,7 +55,6 @@
       </div>
     </a>
   </div>
-  <div class="navSeperator"> </div>
 
   <!-- projects -->
   <div *ngIf="!(projectFlag || projectCreateFlag || projectEditFlag) ">
@@ -85,7 +77,6 @@
       </div>
     </a>
   </div>
-  <div class="navSeperator"> </div>
 
   <!-- partners -->
   <div *ngIf="!(partnersFlag || partnersCreateFlag || partnersEditFlag) ">
@@ -108,26 +99,24 @@
       </div>
     </a>
   </div>
-  <div class="navSeperator"> </div>
 
   <!-- members -->
   <div *ngIf="!(membersFlag || membersCreateFlag)">
     <a routerLink="/admin/Members">
       <div class="navItemContainer pb-3  pt-3">
-        <i class="fas fa-users "></i>
-        <span class="navbarItemText ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">Members</span>
+        <i class="fas fa-users-cog"></i>
+        <span class="navbarItemText ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag"> Members</span>
       </div>
     </a>
   </div>
   <div *ngIf="membersFlag || membersCreateFlag" class="active">
     <a routerLink="/admin/Members">
       <div class="navItemContaineractive  pb-3  pt-3">
-        <i class="fas fa-users "></i>
-        <span class="navbarItemTextActive ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">Members</span>
+        <i class="fas fa-users-cog "></i>
+        <span class="navbarItemTextActive ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag"> Members</span>
       </div>
     </a>
   </div>
-  <div class="navSeperator"> </div>
   <!-- About -->
   <div *ngIf="!(aboutFlag || aboutCreateFlag || aboutEditFlag) ">
     <a routerLink="/admin/About">
@@ -150,17 +139,38 @@
     </a>
   </div>
 
+  <!-- Team -->
+  <div *ngIf="!(teamsFlag || teamsCreateFlag || teamsEditFlag) ">
+    <a routerLink="/admin/Teams">
+      <div class="navItemContainer pb-3  pt-3">
+        <i class="fas fa-user-friends"></i>
+        <span class="navbarItemText ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">
+          Team
+        </span>
+      </div>
+    </a>
+  </div>
+  <div *ngIf="teamsFlag || teamsCreateFlag || teamsEditFlag">
+    <a routerLink="/admin/Teams">
+      <div class="navItemContaineractive  pb-3  pt-3">
+        <i class="fas fa-user-friends "></i>
+        <span class="navbarItemTextActive ml-3" *ngIf="bigNavbarFlag && !smallNavbarFlag">
+          Team
+        </span>
+      </div>
+    </a>
+  </div>
 
 
 
   <div class="downNavbar  ">
     <div class="navbarItemText ml-4 userNameNavbar mr-4" *ngIf="bigNavbarFlag && !smallNavbarFlag">
       <p>
-        user : {{currentUser.username}} 
+        user : {{currentUser.username}}
       </p>
-     <p class="mt-1">
-      expires in : {{expiringTimer}} min
-     </p> 
+      <p class="mt-1">
+        expires in : {{expiringTimer}} min
+      </p>
     </div>
 
     <a class="logoutButton mt-3" (click)="onLogout()">
@@ -196,6 +206,8 @@
             class="fas fa-hands-helping mr-3"></i>Partners</h4>
         <h4 *ngIf="aboutFlag || aboutCreateFlag || aboutEditFlag" class="subMenuTitle ml-2"> <i
             class="fas fa-info-circle mr-3"></i>About</h4>
+        <h4 *ngIf="teamsFlag || teamsCreateFlag || teamsEditFlag" class="subMenuTitle ml-2"> <i
+            class="fas fa-info-circle mr-3"></i>Team</h4>
       </div>
       <div class="col-xs-4 text-center">
         <!--
@@ -313,9 +325,27 @@
           <a *ngIf="aboutCreateFlag || aboutEditFlag" routerLink="/admin/About" class="subHeaderMenuElement">About </a>
           <i *ngIf="aboutCreateFlag || aboutEditFlag" class="fas fa-caret-right ml-2 mr-2"></i>
           <a *ngIf="aboutCreateFlag" class="subHeaderMenuElement" style="color: #e71425;">
-            Create Team Member
+            Create About Text
           </a>
           <a *ngIf="aboutEditFlag" class="subHeaderMenuElement" style="color: #e71425;">
+            Edit About Text
+          </a>
+
+
+          <!-- Teams SubMenu-->
+          <a *ngIf="teamsFlag || teamsCreateFlag || teamsEditFlag" routerLink="/admin" class="subHeaderMenuElement">Home
+          </a>
+          <i *ngIf="teamsFlag || teamsCreateFlag || teamsEditFlag"  class="fas fa-caret-right ml-2 mr-3"></i>
+          <a *ngIf="teamsFlag" routerLink="/admin/Teams" class="subHeaderMenuElement" style="color: #e71425;">Team </a>
+          <i *ngIf="teamsFlag" class="fas fa-caret-right ml-2 "></i>
+
+          <!-- Teams Team Member create/add SubMenu-->
+          <a *ngIf="teamsCreateFlag || teamsEditFlag" routerLink="/admin/Teams" class="subHeaderMenuElement">Team </a>
+          <i *ngIf="teamsCreateFlag || teamsEditFlag" class="fas fa-caret-right ml-2 mr-2"></i>
+          <a *ngIf="teamsCreateFlag" class="subHeaderMenuElement" style="color: #e71425;">
+            Create Team Member
+          </a>
+          <a *ngIf="teamsEditFlag" class="subHeaderMenuElement" style="color: #e71425;">
             Edit Team Member
           </a>
 

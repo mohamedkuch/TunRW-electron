@@ -1,33 +1,36 @@
+<!-- Header -->
+<app-header-admin></app-header-admin>
 
-   <!-- Header -->
-   <app-header-admin></app-header-admin>
+<div class="mainContainerEvent">
+  <!-- Card Section -->
+  <div class="container-fluid mt-5">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="addButton mt-5 mb-5">
+          <div class="mx-auto buttonWrapper">
 
-   <div class="mainContainerEvent">
-      <!-- Card Section -->
-      <div class="container mt-5">
-        <div class="row">
-       <div class="col-xs-12">
-       <!-- Event Tab -->
-       <div class="AlleventTab">
-         <div class="widgetTitleWrapper pb-2">
-           <h3 class="widgetTitle pl-3">All Services
-   
-             <a *ngIf="services.length < 4" routerLink="/admin/Services/create" class="addNewEventBadge"><i class="fas fa-plus"></i> | Add New Service</a>
-   
-           </h3>
-   
-         </div> 
-         <app-admin-list-service></app-admin-list-service> 
-   
-   
-       </div>
-       </div>
-   
-   
-     </div>
-   
-   </div>
+            <a *ngIf="services.length < 4" routerLink="/admin/Services/create" class="addNewEventBadge"><i
+                class="fas fa-plus mr-4"></i>Add New Service</a>
 
-   
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 mb-5">
+        <!-- Event Tab -->
+        <div class="AlleventTab">
+          <div class="widgetTitleWrapper pb-2">
+            <h3 class="widgetTitle pl-5">All Services
+            </h3>
+            <h5 class="widgetSubTitle pl-5">{{totalServices}} Services in Total</h5>
+      
+          </div>
+          <app-admin-list-service></app-admin-list-service>
 
 
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
