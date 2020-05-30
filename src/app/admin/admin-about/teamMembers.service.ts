@@ -59,7 +59,7 @@ export class TeamMembersService {
 
     this.http.post<{ message: string, teamMembers: TeamMembers }>(BACKEND_URL, postData)
       .subscribe((data) => {
-        this.router.navigate(['/admin/About']);
+        this.router.navigate(['/admin/Teams']);
       });
 
   }
@@ -90,7 +90,7 @@ export class TeamMembersService {
       .subscribe((data) => {
         const updatedTeamMembers = [...this.teamMembers];
         const oldProjectIndex = updatedTeamMembers.findIndex(p => p.id === id);
-        this.router.navigate(['/admin/About']);
+        this.router.navigate(['/admin/Teams']);
       });
   }
 
