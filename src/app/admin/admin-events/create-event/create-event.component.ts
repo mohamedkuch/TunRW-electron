@@ -22,7 +22,6 @@ export class CreateEventComponent implements OnInit {
   event: Event;
   isLoading = false;
   form: FormGroup;
-  imagePreviewList: any;
 
   constructor(public eventsService: EventService,
               private formBuilder: FormBuilder,
@@ -49,33 +48,14 @@ export class CreateEventComponent implements OnInit {
                         , date: postData.date , adress: postData.adress, title: postData.title, imagePath: postData.imagePath , creator:postData.creator};
           this.form.setValue({title: this.event.title , adress: this.event.adress ,
                                       description: this.event.description , date: this.event.date, image: this.event.imagePath});
-          console.log("zz", this.form);
-          this.imagePreviewList = this.event.imagePath;
         });
       } else {
         this.mode = 'create';
         this.eventId = null;
-        this.imagePreviewList = [];
       }
     });
   }
-  onImagePicked(event) {
-    let files = event.target.files;
-    this.form.patchValue({image: files});
-    if (files) {
-      for (let file of files) {
-         let reader = new FileReader();
-         reader.onload = (e: any) => {
-              this.imagePreviewList.push(reader.result.toString());
-          }
-          reader.readAsDataURL(file);
-      }
-    }
-    console.log("zaab", this.imagePreviewList);
 
- 
-  
-  }
   onSaveEvent() {
     if (this.form.invalid) {
       this.errorFlag = true;
