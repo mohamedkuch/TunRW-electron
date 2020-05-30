@@ -381,6 +381,10 @@ header {
   cursor: pointer;
   font-size: 10px;
 }
+.minusButton{
+  position: relative;
+  
+}
 .plusButton:hover , .minusButton:hover {
   background: #96030f;
 }

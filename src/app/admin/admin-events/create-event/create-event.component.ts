@@ -22,7 +22,7 @@ export class CreateEventComponent implements OnInit {
   event: Event;
   isLoading = false;
   form: any;
-
+  imageInputCounter = 1;
 
   constructor(public eventsService: EventService,
     private formBuilder: FormBuilder,
@@ -70,11 +70,16 @@ export class CreateEventComponent implements OnInit {
     });
   }
   onMinusClick() {
+    if (this.imageInputCounter > 0) {
+      this.form.controls['image'].removeAt(this.imageInputCounter);
+      this.imageInputCounter -= 1;
+    }
 
   }
   onPlusClick() {
     this.form.controls
       .image.push(new FormControl(null));
+    this.imageInputCounter += 1;
   }
   onSaveEvent() {
     console.log("#####", this.form);
