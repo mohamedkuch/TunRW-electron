@@ -31,7 +31,8 @@ import { ErrorComponent } from './error/error.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AngularMaterialModule } from './angular-material.module';
-import { GestureConfig, MatButtonModule, MatTooltipModule, MatBadgeModule, MatIconModule, MatDividerModule, MatListModule } from '@angular/material';
+import { GestureConfig, MatButtonModule, MatTooltipModule, MatBadgeModule, MatIconModule, MatDividerModule, MatListModule, MatNativeDateModule } from '@angular/material';
+import {MatDatepickerModule} from '@angular/material/datepicker'
 import {MatSliderModule} from '@angular/material/slider';
 import { AdminListPartnersComponent } from './admin/admin-partners/list-partner/list-partner.component';
 import { CreatePartnerComponent } from './admin/admin-partners/create-partner/create-partner.component';
@@ -96,7 +97,9 @@ import { AdminTeamsComponent } from './admin/admin-teams/admin-teams.component';
     MatBadgeModule,
     MatIconModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     {provide : HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},  

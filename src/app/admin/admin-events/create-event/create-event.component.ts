@@ -35,7 +35,7 @@ export class CreateEventComponent implements OnInit {
       adress: new FormControl(null, { validators: [Validators.required] }),
       date: new FormControl(null, { validators: [Validators.required] }),
       description: new FormControl(null, { validators: [Validators.required] }),
-      image: new FormArray([new FormControl(null)])
+      image: new FormArray([new FormControl(null,  { validators: [Validators.required] })])
     });
 
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
@@ -56,14 +56,9 @@ export class CreateEventComponent implements OnInit {
 
           this.form.setValue({
             title: this.event.title, adress: this.event.adress,
-            description: this.event.description, date: this.event.date,
+            description: this.event.description, date: new Date(this.event.date),
             image: this.event.imagePath
           });
-
-          console.log("###", this.event);
-
-          console.log("###", this.form);
-
 
         });
       } else {
@@ -71,13 +66,14 @@ export class CreateEventComponent implements OnInit {
         this.eventId = null;
       }
     });
+
   }
   onMinusClick() {
-    console.log(this.imageInputCounter);
     if (this.imageInputCounter > 0) {
       this.form.controls['image'].removeAt(this.imageInputCounter);
       this.imageInputCounter -= 1;
     }
+    this.errorFlag = false;
 
   }
   onPlusClick() {
@@ -88,27 +84,25 @@ export class CreateEventComponent implements OnInit {
     this.errorFlag = false;
   }
   onSaveEvent() {
-    console.log("#####", this.form);
     if (this.form.invalid) {
       this.errorFlag = true;
       return;
     }
     if (this.mode === 'create') {
       this.eventsService.addEvent(this.form.value.title,
-        this.form.value.date,
+        this.form.value.date.toLocaleString(),
         this.form.value.adress,
         this.form.value.description,
         this.form.value.image
       );
     } else {
       this.eventsService.updateEvent(this.eventId, this.form.value.title,
-        this.form.value.date,
+        this.form.value.date.toLocaleString(),
         this.form.value.adress,
         this.form.value.description,
         this.form.value.image
       );
     }
     this.errorFlag = false;
-    this.form.reset();
   }
 }
