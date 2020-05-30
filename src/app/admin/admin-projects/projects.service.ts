@@ -55,22 +55,23 @@ export class ProjectService {
 
   // Add New Project
   addProject(title: string, date: string, adress: string, description: string, image: Array<string>) {
+
     const postData = new FormData();
     postData.append('title', title);
     postData.append('date', date);
     postData.append('adress', adress);
     postData.append('description', description);
 
-    for (var i = 0; i < image.length; i++) {
-      var file = image[i];
-      // Add the file to the request.
-      postData.append('image', file, title);
-    }
+    image.forEach(element => {
+      postData.append('imagePath', element);
+    });
+
 
     this.http.post<{ message: string, project: Project }>(BACKEND_URL, postData)
       .subscribe((data) => {
         this.router.navigate(['/admin/Projects']);
       });
+
 
   }
 

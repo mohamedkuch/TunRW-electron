@@ -49,7 +49,6 @@ export class CreateProjectComponent implements OnInit {
             id: postData._id, description: postData.description
             , date: postData.date, adress: postData.adress, title: postData.title, imagePath: postData.imagePath, creator: postData.creator
           };
-          console.log("####", this.project);
 
           for (let index = 0; index < this.project.imagePath.length - 1; index++)
             this.onPlusClick();
@@ -86,8 +85,6 @@ export class CreateProjectComponent implements OnInit {
   }
 
   onSaveProject() {
-    console.log("###", this.form);
-
     if (this.form.invalid) {
       this.errorFlag = true;
       return;
@@ -99,23 +96,15 @@ export class CreateProjectComponent implements OnInit {
         this.form.value.description,
         this.form.value.image
       );
-    } 
+    } else {
+      this.projectService.updateProject(this.projectId, this.form.value.title,
+        this.form.value.date.toLocaleDateString('en-US', this.options),
+        this.form.value.adress,
+        this.form.value.description,
+        this.form.value.image
+      );
+    }
+    this.errorFlag = false;
 
-    // if (this.mode === 'create') {
-    //   this.projectService.addProject(this.form.value.title,
-    //     this.form.value.date.toLocaleDateString('en-US', this.options),
-    //     this.form.value.adress,
-    //     this.form.value.description,
-    //     this.form.value.image
-    //   );
-    // } else {
-    //   this.projectService.updateProject(this.projectId, this.form.value.title,
-    //     this.form.value.date.toLocaleDateString('en-US', this.options),
-    //     this.form.value.adress,
-    //     this.form.value.description,
-    //     this.form.value.image
-    //   );
-    // }
-    // this.errorFlag = false;
   }
 }
