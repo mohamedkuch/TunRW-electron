@@ -1,9 +1,9 @@
 export interface Project {
-    id: string;
- title: string;
+  id: string;
+  title: string;
   date: string;
-adress: string;
-description: string;
-imagePath: string;
-creator: string;
+  adress: string;
+  description: string;
+  imagePath: Array<string>;
+  creator: string;
 }

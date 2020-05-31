@@ -32,7 +32,6 @@ export class TeamMembersService {
         };
       }))
       .subscribe((finalData) => {
-        console.log(finalData);
         this.teamMembers = finalData.teamMembers;
         this.teamMembersUpdated.next({ teamMembers: [...this.teamMembers], postCount: finalData.maxPosts });
       });
@@ -54,8 +53,7 @@ export class TeamMembersService {
     const postData = new FormData();
     postData.append('title', title);
     postData.append('position', position);
-    postData.append('image', image, title);
-    console.log("adding Team member", title, image, position);
+    postData.append('imagePath', image);
 
     this.http.post<{ message: string, teamMembers: TeamMembers }>(BACKEND_URL, postData)
       .subscribe((data) => {
@@ -65,31 +63,20 @@ export class TeamMembersService {
   }
 
   // update Team Member
-  updateTeamMember(id: string, title: string, position: string, image: File | string) {
-    let postData: TeamMembers | FormData;
-    if (typeof (image) === 'object') {
+  updateTeamMember(id: string, title: string, position: string, image: string) {
+    let postData: TeamMembers;
 
-      postData = new FormData();
-      postData.append("id", id);
-      postData.append("title", title);
-      postData.append("position", position);
-      postData.append("image", image, title);
-
-    } else {
-      postData = {
-        id: id,
-        title: title,
-        position: position,
-        imagePath: image,
-        creator: null
-      }
-
-
+    postData = {
+      id: id,
+      title: title,
+      position: position,
+      imagePath: image,
+      creator: null
     }
+
+
     this.http.put(BACKEND_URL + "/" + id, postData)
-      .subscribe((data) => {
-        const updatedTeamMembers = [...this.teamMembers];
-        const oldProjectIndex = updatedTeamMembers.findIndex(p => p.id === id);
+      .subscribe(() => {
         this.router.navigate(['/admin/Teams']);
       });
   }

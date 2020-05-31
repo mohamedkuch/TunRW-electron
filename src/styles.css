@@ -1,67 +1,80 @@
 /* You can add global styles to this file, and also import other style files */
 .logoAdmin {
   height: 35px;
-  width : 150px;
+  width: 150px;
   background: url(assets/images/logo.png) no-repeat;
-  background-size: 150px 35px ;
+  background-size: 150px 35px;
   background-position-x: 12px;
 }
+
 .navbar-header {
   margin-top: 8px;
 }
-.subHeaderMenu{
+
+.subHeaderMenu {
   text-align: right;
 }
-.subHeaderMenuElement{
+
+.subHeaderMenuElement {
   color: #232323;
 }
-.subHeaderMenuElement:hover{
+
+.subHeaderMenuElement:hover {
   color: #e71425;
   text-decoration: none;
 }
-.subHeaderMenuElement:active{
+
+.subHeaderMenuElement:active {
   color: #e71425;
   text-decoration: none;
 }
+
 .subHeaderMenu h4 {
   font-size: 14px;
   margin-top: 12px;
 }
-.cardContainer{
+
+.cardContainer {
   border: 1px solid #d8d8d8;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.12);
-  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.12);
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.12);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.12);
   transition: 0.5s all;
-  cursor: default;
-}
-.historyTab, .eventTab, .membersTab{
-  border: 1px solid #d8d8d8;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.12);
-  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.12);
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.12);
-  transition: 0.5s all;
-  cursor: default;
-}
-.AlleventTab {
-  border: 1px solid #e8e8e8;   
-   box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)!important;
   cursor: default;
 }
 
-.cardValue{
+.historyTab,
+.eventTab,
+.membersTab {
+  border: 1px solid #d8d8d8;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.12);
+  transition: 0.5s all;
+  cursor: default;
+}
+
+.AlleventTab {
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06) !important;
+  cursor: default;
+}
+
+.cardValue {
   position: absolute;
   right: 40px;
   top: -5px;
   font-size: 50px;
 }
-.cardValueDate{
+
+.cardValueDate {
   position: absolute;
   right: 40px;
   font-size: 50px;
 }
+
 .cardContainer:hover {
 
   -webkit-box-shadow: 0px 0px 30px 0px rgba(34, 3, 6, 0.32);
@@ -69,20 +82,24 @@
   box-shadow: 0px 0px 30px 0px rgba(34, 3, 6, 0.32);
   transition: 0.5s all;
 }
-.widgetTitle{
+
+.widgetTitle {
   font-weight: bold;
   letter-spacing: 5px;
   text-transform: uppercase;
   font-size: 20px;
 }
-.widgetTitleWrapper{
+
+.widgetTitleWrapper {
   border-bottom: 1px solid #d8d8d8;
 }
-.eventDate{
+
+.eventDate {
   position: absolute;
   right: 30px;
 }
-.viewAllBadge{
+
+.viewAllBadge {
   position: absolute;
   top: 18px;
   right: 30px;
@@ -93,21 +110,25 @@
   cursor: pointer;
   transition: 0.5s all;
 }
-.viewAllBadge:hover{
+
+.viewAllBadge:hover {
   background: #96030f;
   color: white;
   text-decoration: none;
   transition: 0.5s all;
 }
-.mainContainerEvent{
+
+.mainContainerEvent {
   margin-top: 30px !important;
 }
-.userAlias{
+
+.userAlias {
   position: relative;
   top: 5px;
 }
-.roleUser{
-  background:#e71425 ;
+
+.roleUser {
+  background: #e71425;
   color: white;
   border-radius: 4px;
   font-size: 13px;
@@ -116,8 +137,9 @@
   padding: 10px;
   left: 8px;
 }
-.userRole{
-  background:#232323 ;
+
+.userRole {
+  background: #232323;
   color: white;
   border-radius: 4px;
   font-size: 10px;
@@ -125,7 +147,8 @@
   position: absolute;
   bottom: 15px;
 }
-.navSeperator{
+
+.navSeperator {
   border-left: 1px solid #9d9d9d;
   text-indent: -9999px;
   white-space: nowrap;
@@ -134,33 +157,38 @@
 .eventDescBG {
   background-color: #fff;
 }
+
 .projectSection {
   padding-bottom: 8rem;
   background-color: #f8f8f8f8 !important;
 }
-.eventShell{
+
+.eventShell {
   border-radius: 8px;
   border: 2px solid #232323;
 
   position: relative;
-  top:0px;
-  left:0px;
+  top: 0px;
+  left: 0px;
 
-transition: top 0.5s;
--moz-transition: top  0.5s;
--webkit-transition:top 0.5s;
--o-transition: top 0.5s;
+  transition: top 0.5s;
+  -moz-transition: top 0.5s;
+  -webkit-transition: top 0.5s;
+  -o-transition: top 0.5s;
 }
-.eventShell:hover{
-  top:-10px;
+
+.eventShell:hover {
+  top: -10px;
   cursor: pointer;
 }
-.eventImage{
+
+.eventImage {
   border-radius: 5px 5px 0 0;
-  -webkit-box-shadow: inset -6px 8px 42px 0px rgba(0,0,0,0.26);
--moz-box-shadow: inset -6px 8px 42px 0px rgba(0,0,0,0.26);
-box-shadow: inset -6px 8px 42px 0px rgba(0,0,0,0.26);
+  -webkit-box-shadow: inset -6px 8px 42px 0px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: inset -6px 8px 42px 0px rgba(0, 0, 0, 0.26);
+  box-shadow: inset -6px 8px 42px 0px rgba(0, 0, 0, 0.26);
 }
+
 .titleEvent {
 
   padding: 0rem 1rem 0rem 1rem;
@@ -171,32 +199,41 @@ box-shadow: inset -6px 8px 42px 0px rgba(0,0,0,0.26);
   font-weight: bold;
   text-transform: uppercase;
 }
-.statsSection{
+
+.statsSection {
   background: #7c0505;
 
-  
+
 }
-.eventDesc{
+
+.eventDesc {
   font-size: 14px;
 }
+
 /* Angular material Style */
 
-.mat-progress-spinner circle, .mat-spinner circle  {
+.mat-progress-spinner circle,
+.mat-spinner circle {
   stroke: #e71425;
 }
+
 .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
   color: #e71425;
 }
-.mat-form-field.mat-focused.mat-primary .mat-select-arrow{
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
   color: #e71425 !important;
 }
-.mat-form-field.mat-focused .mat-form-field-ripple{
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
   background-color: #e71425 !important;
 }
-.eventsSection{
+
+.eventsSection {
   background: #232323;
 }
-.viewMoreButton{
+
+.viewMoreButton {
   background: #e5e5e5;
   color: #232323;
   font-size: 14px;
@@ -205,19 +242,21 @@ box-shadow: inset -6px 8px 42px 0px rgba(0,0,0,0.26);
   top: -12px;
   padding: 12px;
   border: 1px solid #e5e5e5;
-  border-radius: 5px 5px 0 0 ;
-transition: all 0.5s;
--moz-transition: all  0.5s;
--webkit-transition:all 0.5s;
--o-transition: all 0.5s;
-opacity: 0.5;
+  border-radius: 5px 5px 0 0;
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  opacity: 0.5;
 }
-.viewMoreButton:hover{
+
+.viewMoreButton:hover {
   background: white;
   border: 1px solid white;
   opacity: 1;
 }
-.section-heading{
+
+.section-heading {
   width: fit-content;
   left: -28px;
   font-size: 40px;
@@ -226,13 +265,17 @@ opacity: 0.5;
   color: #232323;
   border-radius: 1px;
 }
+
 .cdk-overlay-dark-backdrop {
-  background: rgba(0,0,0,.72) !important;
+  background: rgba(0, 0, 0, .72) !important;
 }
-.title-span{
-  -ms-transform: rotate(-90deg); /* IE 9 */
-  -webkit-transform: rotate(-90deg); /* Safari prior 9.0 */
-  transform: rotate(-90deg); 
+
+.title-span {
+  -ms-transform: rotate(-90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-90deg);
+  /* Safari prior 9.0 */
+  transform: rotate(-90deg);
   color: #141414;
   font-size: 20px;
   margin-right: 5px;
@@ -248,41 +291,45 @@ opacity: 0.5;
     padding-top: 0px;
   }
 }
+
 header {
   height: 100vh;
 }
 
-.seperator{
+.seperator {
   background: url(assets/images/seperator.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 150%;
   height: 150px;
   position: absolute;
-  bottom: -40px ;
+  bottom: -40px;
   left: -180px;
 
 
--webkit-transform: rotate(-4deg);
-transform: rotate(-4deg);
+  -webkit-transform: rotate(-4deg);
+  transform: rotate(-4deg);
 }
-.eventTableRow td{
+
+.eventTableRow td {
   line-height: 35px !important;
 }
-.eventTableRowHead th{
+
+.eventTableRowHead th {
   line-height: 40px !important;
   background-color: #ebebeb;
 }
-.widgetSubTitle{
+
+.widgetSubTitle {
   color: #898989;
 }
 
-.buttonWrapper{
+.buttonWrapper {
   width: fit-content;
 }
 
 
-.addNewEventBadge{
+.addNewEventBadge {
   background: #e71425;
   color: white;
   border-radius: 3px;
@@ -294,22 +341,57 @@ transform: rotate(-4deg);
   letter-spacing: 5px;
   text-transform: uppercase;
 }
-.addNewEventBadge:hover {
-  background: #96030f;
-  color: white;
-  text-decoration: none;
-  transition: 0.5s all;
+
+.addNewEventBadge:hover , .saveButton:hover{
+  background: #96030f !important;
+  color: white !important;
+  text-decoration: none !important;
 }
 
-.adminSeperator{
+.adminSeperator {
   max-width: 80%;
   border-width: 1px;
   border-color: #c7c7c7;
   position: relative;
   top: 60px;
 }
+
 .saveButton {
+  transition: 0.5s all;
+  background: #e71425 !important;
+  color: white !important;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.5s all;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 15px 20px !important;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.saveButtonWrapper{
+  width: fit-content;
+}
+.plusButton , .minusButton {
+  width: fit-content;
   background: #e71425;
   color: white;
-  float: right;
+  padding: 5px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 10px;
+}
+.minusButton{
+  position: relative;
+  
+}
+.plusButton:hover , .minusButton:hover {
+  background: #96030f;
+}
+.buttonWrapper {
+  display: inline-flex;
+  width: 100%;
+}
+.buttonContainer{
+  display: inline-flex;
 }

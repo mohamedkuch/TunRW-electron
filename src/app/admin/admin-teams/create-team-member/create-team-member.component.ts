@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import { TeamMembersService } from '../../admin-about/teamMembers.service';
+import { TeamMembersService } from '../teamMembers.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { TeamMembers } from '../../admin-about/teamMeambers.modal';
+import { TeamMembers } from '../teamMeambers.modal';
 import { mimeType } from '../../mime-type.validator';
 @Component ({
   selector : 'app-create-team-member',
@@ -21,7 +21,6 @@ export class CreateTeamMemberComponent implements OnInit {
   teamMembers: TeamMembers;
   isLoading = false;
   form: FormGroup;
-  imagePreview: any;
 
   constructor(public teamMembersService: TeamMembersService,
               public route: ActivatedRoute) {}
@@ -52,20 +51,8 @@ export class CreateTeamMemberComponent implements OnInit {
         this.teamMemberId = null;
       }
     });
-    this.imagePreview = '';
   }
-  onImagePicked(event) {
-    const file = (event.target as HTMLInputElement).files[0];
-    this.form.patchValue({image: file});
-    this.form.get('image').updateValueAndValidity();
-    const reader = new FileReader();
-    reader.onload = () => {
-      this.imagePreview = reader.result;
-    };
-    reader.readAsDataURL(file);
-    this.imagePreview = this.imagePreview.toString();
-  
-  }
+ 
   onSaveTeamMember() {
     if (this.form.invalid) {
       this.errorFlag = true;

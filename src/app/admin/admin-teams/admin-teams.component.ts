@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeamMembers } from '../admin-about/teamMeambers.modal';
+import { TeamMembers } from './teamMeambers.modal';
 import { Subscription } from 'rxjs';
-import { TeamMembersService } from '../admin-about/teamMembers.service';
+import { TeamMembersService } from './teamMembers.service';
 
 
 @Component({

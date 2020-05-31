@@ -5,11 +5,6 @@
 background: linear-gradient(90deg, rgba(150,3,15,1) 0%, rgba(231,20,37,1) 35%, rgba(77,1,1,1) 100%);
 
 }
-.saveButton {
-  background: #e71425;
-  color: white;
-  float: right;
-}
 .widgetTitle {
   border: none;
   text-transform: uppercase;
